@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sulselku - Pesona Sulawesi Selatan</title>
+
+    <!-- Tailwind CSS -->
+    <link href="./src/output.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./src/css/style.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabriela&family=Red+Hat+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./public/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./public/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./public/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./public/favicon_io/site.webmanifest" />
+
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body class="font-poppins bg-white-new">
+    <!-- Navbar -->
+    <header class="w-full py-5 fixed z-50 bg-white-new">
+      <nav
+        class="container mx-auto px-4 flex justify-between items-center lg:px-36"
+      >
+        <!-- Logo -->
+        <h1 class="font-gabriela text-primary text-lg md:text-2xl">
+          <a href="index.html">Sulselku.</a>
+        </h1>
+
+        <!-- Menu -->
+        <div
+          class="hidden lg:flex gap-7 text-paragraph font-medium items-center"
+          id="navbarMenu"
+        >
+          <ul class="flex gap-7 items-center">
+            <li>
+              <a href="./index.html" class="text-sm text-primary font-bold"
+                >Beranda</a
+              >
+            </li>
+            <li class="relative">
+              <a
+                onclick="destinationDropdown()"
+                class="text-sm flex items-center cursor-pointer hover:text-primary"
+              >
+                Destinasi
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-3 ml-1 transition-transform duration-300"
+                  id="dropdownIcon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </a>
+              <!-- Menu Dropdown Destinasi -->
+              <div
+                id="destinationDropmenu"
+                class="hidden absolute left-0 mt-1 flex w-96 bg-white-new border rounded shadow-lg p-2 z-50"
+              >
+                <div class="flex flex-col w-full">
+                  <a
+                    href="src/destinasi/alam.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Alam</a
+                  >
+                  <a
+                    href="src/destinasi/kuliner.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Kuliner</a
+                  >
+                  <a
+                    href="src/destinasi/budaya.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Budaya</a
+                  >
+                </div>
+                <div class="flex flex-col w-full">
+                  <a
+                    href="src/destinasi/akomodasi.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Akomodasi</a
+                  >
+                  <a
+                    href="src/destinasi/belanja.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Belanja</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="src/wisata-360.html" class="text-sm hover:text-primary"
+                >Wisata 360°</a
+              >
+            </li>
+            <li>
+              <a href="src/tentang.html" class="text-sm hover:text-primary"
+                >Tentang</a
+              >
+            </li>
+            <li>
+              <a href="src/kontak.html" class="text-sm hover:text-primary"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pencarian dan Hamburger -->
+        <div class="flex items-center">
+          <!-- Pencarian -->
+          <div class="relative mr-2">
+            <button
+              id="searchButton"
+              class="text-primary h-7 w-7 flex items-center justify-center rounded-full transition duration-300 ease-in-out hover:text-white-new hover:bg-primary"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21L15.803 15.803M15.803 15.803A7.5 7.5 0 105.197 5.197a7.5 7.5 0 0010.606 10.606z"
+                />
+              </svg>
+            </button>
+          </div>
+          <!-- Hamburger Button -->
+          <button
+            id="hamburgerButton"
+            class="lg:hidden flex items-center text-primary"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 transition-transform duration-300 ease-in-out"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 5.25h16.5m-16.5 6h16.5m-16.5 6h16.5"
+                class="hamburger-icon origin-center transition-opacity duration-300 ease-in-out"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+                class="close-icon origin-center transition-opacity duration-300 ease-in-out opacity-0"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Menu Mobile -->
+      <div
+        id="mobileMenu"
+        class="hidden fixed lg:hidden bg-white-new z-50 w-full h-full transition-all duration-300 ease-in-out"
+      >
+        <ul class="flex flex-col gap-2 p-4">
+          <li>
+            <a
+              href="./index.html"
+              class="text-primary text-sm font-bold p-2 block rounded hover:bg-gray-100"
+              >Beranda</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-sm p-2 flex items-center justify-between rounded hover:bg-gray-100"
+              onclick="mobileDestinationDropdown()"
+            >
+              Destinasi
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-3 ml-1 transition-transform duration-300"
+                id="mobileDropdownIcon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </a>
+            <!-- Menu Dropdown Destination Mobile -->
+            <ul id="mobileDestinationSubmenu" class="hidden pl-4 space-y-2">
+              <li>
+                <a
+                  href="src/destinasi/alam.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Alam</a
+                >
+              </li>
+              <li>
+                <a
+                  href="src/destinasi/kuliner.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Kuliner</a
+                >
+              </li>
+              <li>
+                <a
+                  href="src/destinasi/budaya.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Budaya</a
+                >
+              </li>
+              <li>
+                <a
+                  href="src/destinasi/akomodasi.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Akomodasi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="src/destinasi/belanja.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Belanja</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="src/wisata-360.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Wisata 360°</a
+            >
+          </li>
+          <li>
+            <a
+              href="src/tentang.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Tentang</a
+            >
+          </li>
+          <li>
+            <a
+              href="src/kontak.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Kontak</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div
+      id="searchPopup"
+      class="fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center hidden z-50"
+    >
+      <div class="bg-white border rounded px-5 py-3 w-2/3 max-w-lg">
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-5 h-5 text-gray-400"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21L15.803 15.803M15.803 15.803A7.5 7.5 0 105.197 5.197a7.5 7.5 0 0010.606 10.606z"
+            />
+          </svg>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Cari..."
+            class="bg-transparent text-gray-700 ml-3 w-full focus:outline-none"
+            oninput="searchResults(this.value)"
+          />
+        </div>
+        <!-- Menampilkan hasil pencarian -->
+        <div id="search-results" class="mt-3 overflow-hidden"></div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home">
+      <header class="w-full lg:pt-44 md:pt-28 pt-24 md:pb-20 pb-16">
+        <div class="container mx-auto px-4 lg:px-24 xl:px-48">
+          <div class="w-full flex items-center justify-between">
+            <!-- Hero Text -->
+            <div class="hero-text w-full md:w-1/2">
+              <div class="text-1 flex gap-2 items-center mb-4">
+                <i class="fa-solid fa-suitcase text-primary"></i>
+                <p
+                  class="font-semibold capitalize md:text-sm text-xs text-paragraph"
+                >
+                  Mulailah petualangan tak terlupakan.
+                </p>
+              </div>
+              <h1
+                class="hero-heading text-paragraph font-bold text-3xl capitalize max-w-lg leading-tight mb-6 lg:text-4xl xl:text-5xl md:w-[80%]"
+              >
+                Temukan Pesona Sulawesi Selatan Bersama
+                <span class="font-gabriela text-primary font-bold"
+                  >Sulselku.</span
+                >
+              </h1>
+              <p
+                class="text-2 leading-relaxed text-grey-second text-sm mb-12 capitalize md:w-[80%]"
+              >
+                Kenali kekayaan alam dan tradisi Sulawesi Selatan. Setiap
+                perjalanan adalah kesempatan untuk menjelajah lebih jauh.
+              </p>
+
+              <div class="hero-btn">
+                <a
+                  href="#popular"
+                  class="bg-primary flex items-center group justify-center text-sm w-full md:w-52 h-10 rounded-full text-white-new capitalize hover:shadow-xl hover:-translate-y-1 transition duration-300 ease-in-out"
+                >
+                  Mulai Jelajah
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="size-4 ml-2"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <!-- Hero Image -->
+            <div class="w-full md:w-1/2 hidden md:block">
+              <img
+                src="./public/img/Hero Image.svg"
+                alt="Hero Image"
+                title="Rumah Adat Tongkonan"
+                class="hero-img"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <!-- Partner Section -->
+    <section id="partner">
+      <header class="w-full md:pt-12 pt-8 md:pb-16 pb-8">
+        <div class="container mx-auto px-4 lg:px-24 xl:px-48">
+          <div class="relative overflow-hidden">
+            <div
+              class="partner-slide w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group hover:paused"
+            >
+              <ul
+                x-ref="logos"
+                class="flex items-center justify-center md:justify-start [&_li]:mx-6 md:[&_li]:mx-16 [&_img]:max-w-none animate-infinite-scroll group-hover:paused"
+              >
+                <li>
+                  <img
+                    src="./public/img/partner/traveloka-logo.svg"
+                    alt="Traveloka Partner"
+                    title="Traveloka"
+                    loading="lazy"
+                    class="lg:w-28 md:w-24 w-20 grayscale hover:grayscale-0 block transition-all duration-300 ease-in-out cursor-pointer"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="./public/img/partner/tiket-logo.svg"
+                    alt="Tiket.com Partner"
+                    title="Tiket.com"
+                    loading="lazy"
+                    class="lg:w-28 md:w-24 w-20 grayscale hover:grayscale-0 block transition-all duration-300 ease-in-out cursor-pointer"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="./public/img/partner/agoda-logo.svg"
+                    alt="Agoda Partner"
+                    title="Agoda"
+                    loading="lazy"
+                    class="lg:w-20 md:w-16 w-14 grayscale hover:grayscale-0 block transition-all duration-300 ease-in-out cursor-pointer"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="./public/img/partner/airbnb-logo.svg"
+                    alt="Airbnb Partner"
+                    title="Airbnb"
+                    loading="lazy"
+                    class="lg:w-24 md:w-20 w-16 grayscale hover:grayscale-0 block transition-all duration-300 ease-in-out cursor-pointer"
+                  />
+                </li>
+              </ul>
+              <ul
+                x-ref="logos"
+                class="flex items-center justify-center md:justify-start [&_li]:mx-6 md:[&_li]:mx-16 [&_img]:max-w-none animate-infinite-scroll group-hover:paused"
+                aria-hidden="true"
+              >
+                <li>
+                  <img
+                    src="./public/img/partner/traveloka-logo.svg"
+                    alt="Traveloka Partner"
+                    title="Traveloka"
+                    loading="lazy"
+                    class="lg:w-28 md:w-24 w-20 grayscale hover:grayscale-0 block transition-all duration-300 ease-in-out cursor-pointer"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="./public/img/partner/tiket-logo.svg"
+                    alt="Tiket.com Partner"
+                    title="Tiket.com"
+                    loading="lazy"
+                    class="lg:w-28 md:w-24 w-20 grayscale hover:grayscale-0 block transition-all duration-300 ease-in-out cursor-pointer"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="./public/img/partner/agoda-logo.svg"
+                    alt="Agoda Partner"
+                    title="Agoda"
+                    loading="lazy"
+                    class="lg:w-20 md:w-16 w-14 grayscale hover:grayscale-0 block transition-all duration-300 ease-in-out cursor-pointer"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="./public/img/partner/airbnb-logo.svg"
+                    alt="Airbnb Partner"
+                    title="Airbnb"
+                    loading="lazy"
+                    class="lg:w-24 md:w-20 w-16 grayscale hover:grayscale-0 block transition-all duration-300 ease-in-out cursor-pointer"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <!-- Popular Section -->
+    <section id="popular">
+      <header class="w-full pt-10 md:pb-20 pb-16">
+        <div class="container mx-auto px-4 lg:px-24 xl:px-48">
+          <!-- Popular Text -->
+          <div
+            class="popular-text w-full flex flex-col items-center justify-center text-center mx-auto mb-10"
+          >
+            <h3
+              class="popular-heading text-paragraph font-bold text-3xl capitalize md:max-w-2xl w-xl leading-tight mb-6 lg:text-4xl xl:text-5xl"
+            >
+              Rekomendasi Destinasi
+              <span class="font-gabriela text-primary">Populer</span>
+            </h3>
+            <p
+              class="popular-text leading-relaxed text-grey-second text-sm capitalize md:w-[60%]"
+            >
+              Sulawesi Selatan mempesona dengan keindahan alam dan budaya
+              uniknya. Dari Toraja hingga Makassar, setiap destinasi menjanjikan
+              petualangan tak terlupakan.
+            </p>
+          </div>
+          <!-- Popular Slider -->
+          <div class="slider-container w-full grid place-items-center">
+            <div
+              class="slider-popular grid gap-y-14 grid-cols-1 md:grid-cols-2 md:gap-x-5 lg:grid-cols-3 xl:grid-cols-4"
+            >
+              <article
+                class="card-popular card-popular-1 flex flex-col items-center relative w-full md:w-64 h-72 mx-auto rounded-lg overflow-hidden shadow-lg group"
+              >
+                <div class="relative w-full h-full">
+                  <img
+                    src="./public/img/pantai-losari.jpg"
+                    alt="Pantai Losari"
+                    class="w-full h-full object-cover rounded-lg"
+                    loading="lazy"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </div>
+                <div
+                  class="card-data absolute flex flex-col w-11/12 max-w-xs md:max-w-sm p-4 bg-white rounded-lg mx-auto text-paragraph transform -bottom-5 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <p class="text-xs font-medium mb-2 flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-3.5 mr-1"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Makassar, Sulawesi Selatan
+                  </p>
+                  <h2 class="text-lg font-bold text-primary mb-2">
+                    Pantai Losari
+                  </h2>
+                  <a
+                    href="src/destinasi/article/pantai-losari.html"
+                    class="inline-block text-xs underline"
+                  >
+                    Selengkapnya
+                  </a>
+                </div>
+              </article>
+              <article
+                class="card-popular card-popular-2 flex flex-col items-center relative w-full md:w-64 h-72 mx-auto rounded-lg overflow-hidden shadow-lg group"
+              >
+                <div class="relative w-full h-full">
+                  <img
+                    src="./public/img/rammang-rammang.jpg"
+                    alt="Rammang-Rammang"
+                    class="w-full h-full object-cover rounded-lg"
+                    loading="lazy"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </div>
+                <div
+                  class="card-data absolute flex flex-col w-11/12 max-w-xs md:max-w-sm p-4 bg-white rounded-lg mx-auto text-paragraph transform -bottom-5 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <p class="text-xs font-medium mb-2 flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-3.5 mr-1"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Maros, Sulawesi Selatan
+                  </p>
+                  <h2 class="text-normal font-bold text-primary mb-2">
+                    Rammang-Rammang
+                  </h2>
+                  <a
+                    href="src/destinasi/article/rammang-rammang.html"
+                    class="inline-block text-xs underline"
+                  >
+                    Selengkapnya
+                  </a>
+                </div>
+              </article>
+              <article
+                class="card-popular card-popular-3 flex flex-col items-center relative w-full md:w-64 h-72 mx-auto rounded-lg overflow-hidden shadow-lg group"
+              >
+                <div class="relative w-full h-full">
+                  <img
+                    src="./public/img/pulau-samalona.jpg"
+                    alt="Pulau Samalona"
+                    class="w-full h-full object-cover rounded-lg"
+                    loading="lazy"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </div>
+                <div
+                  class="card-data absolute flex flex-col w-11/12 max-w-xs md:max-w-sm p-4 bg-white rounded-lg mx-auto text-paragraph transform -bottom-5 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <p class="text-xs font-medium mb-2 flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-3.5 mr-1"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Makassar, Sulawesi Selatan
+                  </p>
+                  <h2 class="text-lg font-bold text-primary mb-2">
+                    Pulau Samalona
+                  </h2>
+                  <a
+                    href="src/destinasi/article/pulau-samalona.html"
+                    class="inline-block text-xs underline"
+                  >
+                    Selengkapnya
+                  </a>
+                </div>
+              </article>
+              <article
+                class="card-popular card-popular-4 flex flex-col items-center relative w-full md:w-64 h-72 mx-auto rounded-lg overflow-hidden shadow-lg group"
+              >
+                <div class="relative w-full h-full">
+                  <img
+                    src="./public/img/gumuk-pasir-sumalu.jpg"
+                    alt="Tana Toraja"
+                    class="w-full h-full object-cover rounded-lg"
+                    loading="lazy"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </div>
+                <div
+                  class="card-data absolute flex flex-col w-11/12 max-w-xs md:max-w-sm p-4 bg-white rounded-lg mx-auto text-paragraph transform -bottom-5 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <p class="text-xs font-medium mb-2 flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-3.5 mr-1"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Toraja Utara, Sulawesi Selatan
+                  </p>
+                  <h2 class="text-lg font-bold text-primary mb-2">
+                    Gumuk Pasir Sumalu
+                  </h2>
+                  <a
+                    href="src/destinasi/article/gumuk-pasir-sumalu.html"
+                    class="inline-block text-xs underline"
+                  >
+                    Selengkapnya
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <!-- Culture Highlight Section -->
+    <section id="highlight">
+      <header class="w-full pt-8 md:py-20 pb-16 bg-dark-blue">
+        <div class="container mx-auto px-4 lg:px-24 xl:px-48 overflow-hidden">
+          <!-- Highlight Heading -->
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-24"
+          >
+            <!-- Text -->
+            <div class="w-full text-white-new">
+              <h3
+                class="highlight-heading text-w font-bold text-3xl capitalize md:max-w-2xl w-xl leading-tight mb-6 lg:text-4xl xl:text-5xl"
+              >
+                Highlight
+                <span class="font-gabriela text-secondary">Budaya</span>
+              </h3>
+              <p
+                class="highlight-text leading-relaxed mb-8 text-white-new text-sm capitalize md:w-[80%]"
+              >
+                Jadikan pengalaman liburanmu menyenangkan dengan menjelajahi
+                indahnya Sulawesi Selatan.
+              </p>
+              <div class="highlight-btn">
+                <a
+                  href="destinasi/budaya.html"
+                  class="bg-secondary flex items-center group justify-center text-sm w-full md:w-52 h-10 rounded-full text-white-new capitalize hover:shadow-xl hover:-translate-y-1 transition duration-300 ease-in-out"
+                >
+                  Lihat Semua
+                </a>
+              </div>
+            </div>
+            <!-- Button -->
+            <div
+              class="highlight-btn hidden md:flex justify-end items-center md:w-1/2 flex gap-4"
+            >
+              <!-- Prev -->
+              <div
+                id="prevBtn"
+                class="w-10 h-10 bg-slate-500 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition duration-300 ease-in-out disabled:cursor-not-allowed"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-5 text-white-new"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.28 7.72a.75.75 0 0 1 0 1.06l-2.47 2.47H21a.75.75 0 0 1 0 1.5H4.81l2.47 2.47a.75.75 0 1 1-1.06 1.06l-3.75-3.75a.75.75 0 0 1 0-1.06l3.75-3.75a.75.75 0 0 1 1.06 0Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <!-- Next -->
+              <div
+                id="nextBtn"
+                class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition duration-300 ease-in-out disabled:cursor-not-allowed"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-5 text-white-new"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Highlight Slider -->
+          <div
+            id="highlight-slider"
+            class="highlight-card flex justify-between items-center gap-4 md:gap-8 transition-transform duration-300 ease-in-out"
+          >
+            <!-- Card 1 -->
+            <div
+              class="relative bg-secondary h-[165px] w-full md:w-[465px] md:h-[215px] rounded-2xl flex flex-row flex-shrink-0 items-center justify-between p-4 text-white-new"
+            >
+              <img
+                src="./public/img/rumah-tongkonan.svg"
+                alt="Rumah Tongkonan"
+                title="Rumah Tongkonan"
+                class="absolute bottom-0 left-0 hidden md:block"
+                loading="lazy"
+              />
+              <div class="card-text md:ml-auto p-2 text-left md:text-right">
+                <h1 class="text-sm md:text-lg font-semibold leading-tight">
+                  Rumah Tongkonan
+                </h1>
+                <p
+                  class="text-xs leading-relaxed md:text-xs md:text-sm font-light md:w-[12rem] my-5"
+                >
+                  Rumah adat khas Toraja yang sarat dengan makna filosofis.
+                </p>
+                <a
+                  href="src/destinasi/article/rumah-adat-tongkonan.html"
+                  class="underline md:hover:underline text-sm"
+                  >Selengkapnya</a
+                >
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="relative bg-secondary h-[165px] w-full md:w-[465px] md:h-[215px] rounded-2xl flex flex-row flex-shrink-0 items-center justify-between p-4 text-white-new"
+            >
+              <img
+                src="./public/img/maudu-lompoa.svg"
+                alt="Maudu Lompoa"
+                title="Maudu Lompoa"
+                class="absolute bottom-0 left-0 hidden md:block"
+                loading="lazy"
+              />
+              <div class="card-text md:ml-auto p-2 text-left md:text-right">
+                <h1 class="text-sm md:text-lg font-semibold leading-tight">
+                  Maudu Lompoa
+                </h1>
+                <p
+                  class="text-xs leading-relaxed md:text-sm font-light md:w-[13rem] my-5"
+                >
+                  Upacara adat Makassar untuk merayakan Maulid Nabi dengan penuh
+                  makna dan kebersamaan.
+                </p>
+                <a
+                  href="src/destinasi/article/maudu-lompoa.html"
+                  class="underline md:hover:underline text-sm"
+                  >Selengkapnya</a
+                >
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="relative bg-secondary h-[165px] w-full md:w-[465px] md:h-[215px] rounded-2xl flex flex-row flex-shrink-0 items-center justify-between p-4 text-white-new"
+            >
+              <img
+                src="./public/img/baju-bodo.svg"
+                alt="Baju Bodo"
+                title="Baju Bodo"
+                class="absolute bottom-0 left-0 hidden md:block"
+                loading="lazy"
+              />
+              <div class="card-text md:ml-auto p-2 text-left md:text-right">
+                <h1 class="text-sm md:text-lg font-semibold leading-tight">
+                  Baju Bodo
+                </h1>
+                <p
+                  class="text-xs leading-relaxed md:text-sm font-light md:w-[12rem] my-5"
+                >
+                  Pakaian adat Bugis yang memancarkan keanggunan dan
+                  kesederhanaan.
+                </p>
+                <a
+                  href="src/destinasi/article/baju-bodo.html"
+                  class="underline md:hover:underline text-sm"
+                  >Selengkapnya</a
+                >
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="relative bg-secondary h-[165px] w-full md:w-[465px] md:h-[215px] rounded-2xl flex flex-row flex-shrink-0 items-center justify-between p-4 text-white-new"
+            >
+              <img
+                src="./public/img/balla-lompoa.svg"
+                alt="Museum Balla Lompoa"
+                title="Museum Balla Lompoa"
+                class="absolute bottom-0 left-0 hidden md:block"
+                loading="lazy"
+              />
+              <div class="card-text md:ml-auto p-2 text-left md:text-right">
+                <h1 class="text-sm md:text-lg font-semibold leading-tight">
+                  Museum Balla Lompoa
+                </h1>
+                <p
+                  class="text-xs leading-relaxed md:text-sm font-light md:w-[12rem] my-5"
+                >
+                  Museum peninggalan Kerajaan Gowa yang menyimpan sejarah dan
+                  budaya.
+                </p>
+                <a
+                  href="src/destinasi/article/museum-balla-lompoa.html"
+                  class="underline md:hover:underline text-sm"
+                  >Selengkapnya</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <!-- Travel Guide Section -->
+    <section id="guide">
+      <header class="w-full md:py-20 pt-16 py-16">
+        <div class="container mx-auto px-4 lg:px-24 xl:px-48">
+          <div class="w-full flex flex-wrap items-center">
+            <!-- Travel Guide Image -->
+            <div
+              class="w-[70%] mb-8 mx-auto shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-1/2 lg:px-6"
+            >
+              <img
+                src="./public/img/Travel Guide Image.svg"
+                alt="Travel Guide Image"
+                title="Travel Guide Sulselku"
+                loading="lazy"
+                class="guide-img"
+              />
+            </div>
+            <!-- Travel Guide Text and Content -->
+            <div class="w-full shrink-0 grow-0 basis-auto lg:w-1/2">
+              <h1
+                class="guide-heading text-paragraph font-bold text-3xl capitalize max-w-lg leading-tight mb-6 lg:text-4xl xl:text-5xl"
+              >
+                Panduan Perjalanan Bersama
+                <span class="font-gabriela text-primary font-bold"
+                  >Sulselku.</span
+                >
+              </h1>
+              <p
+                class="guide-text leading-relaxed text-grey-second text-sm mb-12 capitalize md:w-[80%]"
+              >
+                Panduan praktis untuk wisatawan, mencakup tips perjalanan,
+                rekomendasi transportasi, dan akomodasi.
+              </p>
+
+              <div class="guide-content">
+                <div class="flex flex-wrap">
+                  <!-- Guide 1 -->
+                  <div
+                    class="guide-card-1 mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-1/2"
+                  >
+                    <div class="flex items-start">
+                      <div>
+                        <div
+                          class="flex justify-center items-center rounded-md bg-sky-200 w-10 h-10 text-primary"
+                        >
+                          <i class="fa-solid fa-route text-lg"></i>
+                        </div>
+                      </div>
+                      <div class="ml-6 grow">
+                        <p class="mb-2 font-bold">Rute Terbaik</p>
+                        <p class="text-sm text-grey-second">
+                          Rute perjalanan optimal untuk menjelajahi destinasi
+                          dengan efisien.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Guide 2 -->
+                  <div
+                    class="guide-card-2 mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12"
+                  >
+                    <div class="flex items-start">
+                      <div class="srink-0">
+                        <div
+                          class="flex justify-center items-center rounded-md bg-sky-200 w-10 h-10 text-primary"
+                        >
+                          <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                      </div>
+                      <div class="ml-6 grow">
+                        <p class="mb-2 font-bold">Informasi Lengkap</p>
+                        <p class="text-sm text-grey-second">
+                          Informasi yang sangat lengkap dan informatif.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Guide 3 -->
+                  <div
+                    class="guide-card-3 mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12"
+                  >
+                    <div class="align-start flex">
+                      <div class="shrink-0">
+                        <div
+                          class="flex justify-center items-center rounded-md bg-sky-200 w-10 h-10 text-primary"
+                        >
+                          <i class="fa-solid fa-puzzle-piece text-lg"></i>
+                        </div>
+                      </div>
+                      <div class="ml-6 grow">
+                        <p class="mb-2 font-bold">Atraksi Terdekat</p>
+                        <p class="text-sm text-grey-second">
+                          Temukan tempat wisata menarik di sekitar destinasi
+                          utama.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Guide 4 -->
+                  <div
+                    class="guide-card-4 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12"
+                  >
+                    <div class="align-start flex">
+                      <div class="shrink-0">
+                        <div
+                          class="flex justify-center items-center rounded-md bg-sky-200 w-10 h-10 text-primary"
+                        >
+                          <i class="fa-solid fa-utensils"></i>
+                        </div>
+                      </div>
+                      <div class="ml-6 grow">
+                        <p class="mb-2 font-bold">Tempat Makan Terbaik</p>
+                        <p class="text-sm text-grey-second">
+                          Rekomendasi restoran atau tempat makan unggulan di
+                          sekitar destinasi.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <!-- Pesona Section -->
+    <section id="pesona">
+      <header class="w-full md:py-20 py-16">
+        <div class="container mx-auto px-4 lg:px-24 xl:px-48">
+          <div class="w-full flex items-center justify-between">
+            <!-- Jelajahi Text -->
+            <div class="w-full md:w-1/2">
+              <h1
+                class="jelajahi-heading text-paragraph font-bold text-3xl capitalize max-w-lg leading-tight mb-6 lg:text-4xl xl:text-5xl md:w-[80%]"
+              >
+                Saatnya Jelajahi
+                <span class="font-gabriela text-primary font-bold"
+                  >Sulawesi Selatan</span
+                >
+              </h1>
+              <p
+                class="jelajahi-text leading-relaxed text-grey-second text-sm mb-6 capitalize md:w-[80%]"
+              >
+                Jelajahi Sulawesi Selatan dari alam memukau, belanja unik,
+                hingga penginapan terbaik untuk pengalaman wisata yang sempurna.
+              </p>
+
+              <div class="jelajahi-text w-full lg:w-[80%]">
+                <div class="flex mb-2">
+                  <button
+                    class="w-1/3 py-4 text-center font-medium text-xs sm:text-sm md:text-md text-gray-700 tabLinks rounded-tl-lg rounded-bl-lg focus:outline-none active:bg-gray-200"
+                    onclick="openTab(event, 'tab1')"
+                  >
+                    <i class="mr-2 fa-solid fa-mountain-sun"></i>
+                    Alam
+                  </button>
+                  <button
+                    class="w-1/3 py-4 text-center font-medium text-xs sm:text-sm md:text-md text-gray-700 tabLinks focus:outline-none"
+                    onclick="openTab(event, 'tab2')"
+                  >
+                    <i class="mr-2 fa-solid fa-hotel"></i>
+                    Akomodasi
+                  </button>
+                  <button
+                    class="w-1/3 py-4 text-center font-medium text-xs sm:text-sm md:text-md text-gray-700 tabLinks rounded-tr-lg rounded-br-lg focus:outline-none"
+                    onclick="openTab(event, 'tab3')"
+                  >
+                    <i class="mr-2 fa-solid fa-bag-shopping"></i>
+                    Belanja
+                  </button>
+                </div>
+                <div class="border"></div>
+                <div id="tab1" class="jelajahi-text tabcontent py-4">
+                  <h2 class="text-lg font-bold text-gray-800">
+                    Destinasi Alam
+                  </h2>
+                  <p class="my-3 text-grey-second text-sm">
+                    Sulawesi Selatan menawarkan berbagai pemandangan alam yang
+                    memukau, mulai dari pantai yang memesona hingga pegunungan
+                    yang menantang. Jelajahi keajaiban alam yang akan membuat
+                    Anda terpesona dan takjub dengan keindahan yang tiada tara.
+                  </p>
+                  <a
+                    href="src/destinasi/alam.html"
+                    class="flex items-center text-primary text-sm group"
+                    >Lihat Alam
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-5 ml-2 group-hover:ml-4 transition-all duration-300 ease-in-out"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div id="tab2" class="tabcontent py-4 hidden">
+                  <h2 class="text-lg font-bold text-gray-800">
+                    Pilihan Akomodasi
+                  </h2>
+                  <p class="my-3 text-grey-second text-sm">
+                    Temukan berbagai pilihan akomodasi di Sulawesi Selatan yang
+                    menawarkan kenyamanan dan kemewahan. Mulai dari hotel
+                    berbintang hingga vila yang tenang, nikmati akomodasi yang
+                    sesuai dengan kebutuhan Anda untuk pengalaman menginap yang
+                    menyenangkan.
+                  </p>
+                  <a
+                    href="src/destinasi/akomodasi.html"
+                    class="flex items-center text-primary text-sm group"
+                    >Lihat Akomodasi
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-5 ml-2 group-hover:ml-4 transition-all duration-300 ease-in-out"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div id="tab3" class="tabcontent py-4 hidden">
+                  <h2 class="text-lg font-bold text-gray-800">Pusat Belanja</h2>
+                  <p class="my-3 text-grey-second text-sm">
+                    Rasakan serunya berbelanja di Sulawesi Selatan dengan
+                    berbagai pusat belanja yang menarik. Dari pasar tradisional
+                    yang ramai hingga pusat perbelanjaan modern, temukan beragam
+                    produk lokal dan internasional yang memenuhi kebutuhan dan
+                    keinginan Anda.
+                  </p>
+                  <a
+                    href="src/destinasi/belanja.html"
+                    class="flex items-center text-primary text-sm group"
+                    >Lihat Belanja
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-5 ml-2 group-hover:ml-4 transition-all duration-300 ease-in-out"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Jelajahi Image -->
+            <div class="w-full md:w-1/2 hidden md:block">
+              <img
+                id="jelajahiImage"
+                src="./public/img/Pesona Image - Alam.svg"
+                alt="Destinasi Alam"
+                title="Destinasi Alam"
+                class="jelajahi-img"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonial">
+      <header class="w-full md:py-20 py-8">
+        <div class="container mx-auto lg:px-24 xl:px-48">
+          <!-- Testimonial Heading -->
+          <div
+            class="w-full flex items-center justify-center text-center mx-auto mb-8"
+          >
+            <h3
+              class="testimonial-heading text-paragraph font-bold text-3xl capitalize md:max-w-2xl w-xl leading-tight mb-6 lg:text-4xl xl:text-5xl"
+            >
+              Pendapat Mereka Tentang
+              <span class="font-gabriela text-primary">Sulselku.</span>
+            </h3>
+          </div>
+
+          <!-- Testimonial Slider -->
+          <div class="testimonial-slide relative overflow-hidden">
+            <div
+              class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group"
+            >
+              <ul
+                class="flex items-center justify-center md:justify-start animate-infinite-scroll"
+              >
+                <!-- Card 1 -->
+                <li
+                  class="mx-4 w-64 h-auto md:h-full p-4 rounded-lg flex flex-col justify-start border flex-shrink-0"
+                >
+                  <div class="stars-rate flex gap-2 mb-5">
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                  </div>
+                  <div
+                    class="text-rate text-xs md:text-sm w-full text-grey-second mb-8"
+                  >
+                    Pengalaman saya luar biasa! Website ini memudahkan saya
+                    menemukan tempat-tempat indah di Makassar. Desainnya menarik
+                    dan informatif. Terima kasih!
+                  </div>
+                  <div class="profile-rate flex flex-row items-center">
+                    <div class="profile-img">
+                      <img
+                        src="./public/img/profile/Profile-1.svg"
+                        alt="Dina Sari"
+                        class="w-[75%] md:w-[85%]"
+                      />
+                    </div>
+                    <div
+                      class="profile-bio ml-1 md:ml-2 flex flex-col text-sm md:text-base"
+                    >
+                      <h2 class="font-semibold">Dina Sari</h2>
+                      <p class="font-normal text-grey-second">Wisatawan</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- Card 2 -->
+                <li
+                  class="mx-4 w-64 h-auto md:h-full p-4 rounded-lg flex flex-col justify-start border flex-shrink-0"
+                >
+                  <div class="stars-rate flex gap-2 mb-5">
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                  </div>
+                  <div
+                    class="text-rate text-xs md:text-sm w-full text-grey-second mb-8"
+                  >
+                    Saya sangat terkesan dengan kemudahan navigasi dan informasi
+                    yang jelas tentang penginapan dan tempat belanja. Website
+                    ini sangat membantu rencana perjalanan saya.
+                  </div>
+                  <div class="profile-rate flex flex-row items-center">
+                    <div class="profile-img">
+                      <img
+                        src="./public/img/profile/Profile-2.svg"
+                        alt="Budi Arifin"
+                        class="w-[75%] md:w-[85%]"
+                      />
+                    </div>
+                    <div
+                      class="profile-bio ml-1 md:ml-2 flex flex-col text-sm md:text-base"
+                    >
+                      <h2 class="font-semibold">Budi Arifin</h2>
+                      <p class="font-normal text-grey-second">Wisatawan</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- Card 3 -->
+                <li
+                  class="mx-4 w-64 h-auto md:h-full p-4 rounded-lg flex flex-col justify-start border flex-shrink-0"
+                >
+                  <div class="stars-rate flex gap-2 mb-5">
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                  </div>
+                  <div
+                    class="text-rate text-xs md:text-sm w-full text-grey-second mb-8"
+                  >
+                    Pengalaman saya luar biasa! Website ini memudahkan saya
+                    menemukan tempat-tempat indah di Makassar. Desainnya menarik
+                    dan informatif. Terima kasih!
+                  </div>
+                  <div class="profile-rate flex flex-row items-center">
+                    <div class="profile-img">
+                      <img
+                        src="./public/img/profile/Profile-3.svg"
+                        alt="Sarah Rizky"
+                        class="w-[75%] md:w-[85%]"
+                      />
+                    </div>
+                    <div
+                      class="profile-bio ml-1 md:ml-2 flex flex-col text-sm md:text-base"
+                    >
+                      <h2 class="font-semibold">Sarah Rizky</h2>
+                      <p class="font-normal text-grey-second">Wisatawan</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- Card 4 -->
+                <li
+                  class="mx-4 w-64 h-auto md:h-full p-4 rounded-lg flex flex-col justify-start border flex-shrink-0"
+                >
+                  <div class="stars-rate flex gap-2 mb-5">
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                  </div>
+                  <div
+                    class="text-rate text-xs md:text-sm w-full text-grey-second mb-8"
+                  >
+                    Desain yang bersih dan fungsional membuat website ini sangat
+                    mudah digunakan. Saya menemukan tempat belanja yang saya
+                    cari dan informasi tentang penginapan sangat membantu.
+                  </div>
+                  <div class="profile-rate flex flex-row items-center">
+                    <div class="profile-img">
+                      <img
+                        src="./public/img/profile/Profile-4.svg"
+                        alt="Andi Putra"
+                        class="w-[75%] md:w-[85%]"
+                      />
+                    </div>
+                    <div
+                      class="profile-bio ml-1 md:ml-2 flex flex-col text-sm md:text-base"
+                    >
+                      <h2 class="font-semibold">Andi Putra</h2>
+                      <p class="font-normal text-grey-second">Wisatawan</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- Card 5 -->
+                <li
+                  class="mx-4 w-64 h-auto md:h-full p-4 rounded-lg flex flex-col justify-start border flex-shrink-0"
+                >
+                  <div class="stars-rate flex gap-2 mb-5">
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                  </div>
+                  <div
+                    class="text-rate text-xs md:text-sm w-full text-grey-second mb-8"
+                  >
+                    Saya bisa dengan mudah menemukan informasi tentang destinasi
+                    wisata dan penginapan. Website ini benar-benar meningkatkan
+                    pengalaman perjalanan saya.
+                  </div>
+                  <div class="profile-rate flex flex-row items-center">
+                    <div class="profile-img">
+                      <img
+                        src="./public/img/profile/Profile-5.svg"
+                        alt="Lina Wulandari"
+                        class="w-[75%] md:w-[85%]"
+                      />
+                    </div>
+                    <div
+                      class="profile-bio ml-1 md:ml-2 flex flex-col text-sm md:text-base"
+                    >
+                      <h2 class="font-semibold">Lina Wulandari</h2>
+                      <p class="font-normal text-grey-second">Wisatawan</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- Duplikat Card untuk Scrolling -->
+              <ul
+                class="flex items-center justify-center md:justify-start animate-infinite-scroll"
+              >
+                <!-- Card 1 -->
+                <li
+                  class="mx-4 w-64 h-auto md:h-full p-4 rounded-lg flex flex-col justify-start border flex-shrink-0"
+                >
+                  <div class="stars-rate flex gap-2 mb-5">
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                  </div>
+                  <div
+                    class="text-rate text-xs md:text-sm w-full text-grey-second mb-8"
+                  >
+                    Pengalaman saya luar biasa! Website ini memudahkan saya
+                    menemukan tempat-tempat indah di Makassar. Desainnya menarik
+                    dan informatif. Terima kasih!
+                  </div>
+                  <div class="profile-rate flex flex-row items-center">
+                    <div class="profile-img">
+                      <img
+                        src="./public/img/profile/Profile-1.svg"
+                        alt="Dina Sari"
+                        class="w-[75%] md:w-[85%]"
+                      />
+                    </div>
+                    <div
+                      class="profile-bio ml-1 md:ml-2 flex flex-col text-sm md:text-base"
+                    >
+                      <h2 class="font-semibold">Dina Sari</h2>
+                      <p class="font-normal text-grey-second">Wisatawan</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- Card 2 -->
+                <li
+                  class="mx-4 w-64 h-auto md:h-full p-4 rounded-lg flex flex-col justify-start border flex-shrink-0"
+                >
+                  <div class="stars-rate flex gap-2 mb-5">
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                  </div>
+                  <div
+                    class="text-rate text-xs md:text-sm w-full text-grey-second mb-8"
+                  >
+                    Saya sangat terkesan dengan kemudahan navigasi dan informasi
+                    yang jelas tentang penginapan dan tempat belanja. Website
+                    ini sangat membantu rencana perjalanan saya.
+                  </div>
+                  <div class="profile-rate flex flex-row items-center">
+                    <div class="profile-img">
+                      <img
+                        src="./public/img/profile/Profile-2.svg"
+                        alt="Budi Arifin"
+                        class="w-[75%] md:w-[85%]"
+                      />
+                    </div>
+                    <div
+                      class="profile-bio ml-1 md:ml-2 flex flex-col text-sm md:text-base"
+                    >
+                      <h2 class="font-semibold">Budi Arifin</h2>
+                      <p class="font-normal text-grey-second">Wisatawan</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- Card 3 -->
+                <li
+                  class="mx-4 w-64 h-auto md:h-full p-4 rounded-lg flex flex-col justify-start border flex-shrink-0"
+                >
+                  <div class="stars-rate flex gap-2 mb-5">
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                  </div>
+                  <div
+                    class="text-rate text-xs md:text-sm w-full text-grey-second mb-8"
+                  >
+                    Pengalaman saya luar biasa! Website ini memudahkan saya
+                    menemukan tempat-tempat indah di Makassar. Desainnya menarik
+                    dan informatif. Terima kasih!
+                  </div>
+                  <div class="profile-rate flex flex-row items-center">
+                    <div class="profile-img">
+                      <img
+                        src="./public/img/profile/Profile-3.svg"
+                        alt="Sarah Rizky"
+                        class="w-[75%] md:w-[85%]"
+                      />
+                    </div>
+                    <div
+                      class="profile-bio ml-1 md:ml-2 flex flex-col text-sm md:text-base"
+                    >
+                      <h2 class="font-semibold">Sarah Rizky</h2>
+                      <p class="font-normal text-grey-second">Wisatawan</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- Card 4 -->
+                <li
+                  class="mx-4 w-64 h-auto md:h-full p-4 rounded-lg flex flex-col justify-start border flex-shrink-0"
+                >
+                  <div class="stars-rate flex gap-2 mb-5">
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                  </div>
+                  <div
+                    class="text-rate text-xs md:text-sm w-full text-grey-second mb-8"
+                  >
+                    Desain yang bersih dan fungsional membuat website ini sangat
+                    mudah digunakan. Saya menemukan tempat belanja yang saya
+                    cari dan informasi tentang penginapan sangat membantu.
+                  </div>
+                  <div class="profile-rate flex flex-row items-center">
+                    <div class="profile-img">
+                      <img
+                        src="./public/img/profile/Profile-4.svg"
+                        alt="Andi Putra"
+                        class="w-[75%] md:w-[85%]"
+                      />
+                    </div>
+                    <div
+                      class="profile-bio ml-1 md:ml-2 flex flex-col text-sm md:text-base"
+                    >
+                      <h2 class="font-semibold">Andi Putra</h2>
+                      <p class="font-normal text-grey-second">Wisatawan</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- Card 5 -->
+                <li
+                  class="mx-4 w-64 h-auto md:h-full p-4 rounded-lg flex flex-col justify-start border flex-shrink-0"
+                >
+                  <div class="stars-rate flex gap-2 mb-5">
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                    <i class="fa-solid fa-star text-yellow-new"></i>
+                  </div>
+                  <div
+                    class="text-rate text-xs md:text-sm w-full text-grey-second mb-8"
+                  >
+                    Saya bisa dengan mudah menemukan informasi tentang destinasi
+                    wisata dan penginapan. Website ini benar-benar meningkatkan
+                    pengalaman perjalanan saya.
+                  </div>
+                  <div class="profile-rate flex flex-row items-center">
+                    <div class="profile-img">
+                      <img
+                        src="./public/img/profile/Profile-5.svg"
+                        alt="Lina Wulandari"
+                        class="w-[75%] md:w-[85%]"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div
+                      class="profile-bio ml-1 md:ml-2 flex flex-col text-sm md:text-base"
+                    >
+                      <h2 class="font-semibold">Lina Wulandari</h2>
+                      <p class="font-normal text-grey-second">Wisatawan</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <footer class="w-full md:pb-20 py-8">
+      <div class="mx-auto px-4 lg:px-24 xl:px-48">
+        <!--Footer Content-->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8"
+        >
+          <!-- Logo -->
+          <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
+            <a
+              href="index.html"
+              class="flex justify-center lg:justify-start text-primary text-3xl font-bold font-gabriela"
+            >
+              Sulselku.
+            </a>
+            <p
+              class="py-8 text-sm text-grey-second lg:max-w-xs text-center lg:text-left"
+            >
+              Temukan inspirasi, informasi wisata, dan pengalaman unik yang kami
+              sajikan. Bersama kita majukan pariwisata Sulsel!
+            </p>
+          </div>
+          <!-- Menu Sulselku -->
+          <div class="lg:mx-auto text-left">
+            <h4 class="text-lg text-gray-900 font-semibold mb-7">
+              Menu Sulselku
+            </h4>
+            <ul class="text-sm transition-all duration-500">
+              <li class="mb-6">
+                <a href="index.html" class="text-grey-second hover:text-primary"
+                  >Beranda</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="src/wisata-360.html"
+                  class="text-grey-second hover:text-primary"
+                  >Wisata 360°</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="src/tentang.html"
+                  class="text-grey-second hover:text-primary"
+                  >Tentang</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="src/kontak.html"
+                  class="text-grey-second hover:text-primary"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Kategori Destinasi -->
+          <div class="lg:mx-auto text-left">
+            <h4 class="text-lg text-gray-900 font-semibold mb-7">
+              Kategori Destinasi
+            </h4>
+            <ul class="text-sm transition-all duration-500">
+              <li class="mb-6">
+                <a
+                  href="src/destinasi/alam.html"
+                  class="text-grey-second hover:text-primary"
+                  >Alam</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="src/destinasi/kuliner.html"
+                  class="text-grey-second hover:text-primary"
+                  >Kuliner</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="src/destinasi/budaya.html"
+                  class="text-grey-second hover:text-primary"
+                  >Budaya</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="src/destinasi/akomodasi.html"
+                  class="text-grey-second hover:text-primary"
+                  >Akomodasi</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="src/destinasi/belanja.html"
+                  class="text-grey-second hover:text-primary"
+                  >Belanja</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Bottom Footer -->
+        <div class="py-7 border-t border-gray-200">
+          <div
+            class="flex items-center justify-center flex-col lg:justify-between lg:flex-row"
+          >
+            <span class="text-sm text-gray-500"
+              >©<a href="index.html" class="text-primary"> Sulselku.</a> 2024,
+              All rights reserved.</span
+            >
+            <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0">
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-instagram group-hover:text-primary text-white-new text-lg"
+                ></i>
+              </a>
+              <a
+                href="https://www.x.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-twitter group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-tiktok group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-youtube group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Main JS -->
+    <script src="src/js/script.js"></script>
+
+    <!-- Scroll Reveal -->
+    <script>
+      ScrollReveal({
+        reset: false,
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+      });
+
+      ScrollReveal().reveal(
+        ".text-1, .popular-heading, .highlight-heading, .guide-heading, .jelajahi-heading",
+        {
+          delay: 150,
+          duration: 1500,
+          origin: "top",
+        }
+      );
+      ScrollReveal().reveal(
+        ".popular-text, .highlight-text, .guide-text, .jelajahi-text, .testimonial-heading",
+        {
+          delay: 250,
+          duration: 2500,
+          origin: "top",
+        }
+      );
+      ScrollReveal().reveal(".card-popular-1, .highlight-card, .guide-card-1", {
+        delay: 100,
+        duration: 1000,
+        origin: "bottom",
+      });
+      ScrollReveal().reveal(".card-popular-2, .guide-card-2", {
+        delay: 150,
+        duration: 1500,
+        origin: "bottom",
+      });
+      ScrollReveal().reveal(".card-popular-3, .guide-card-3", {
+        delay: 200,
+        duration: 2000,
+        origin: "bottom",
+      });
+      ScrollReveal().reveal(".card-popular-4, .guide-card-4", {
+        delay: 250,
+        duration: 2500,
+        origin: "bottom",
+      });
+      ScrollReveal().reveal(".hero-heading, .guide-img", {
+        delay: 150,
+        duration: 2000,
+        origin: "left",
+      });
+      ScrollReveal().reveal(".text-2", {
+        delay: 150,
+        duration: 2000,
+        origin: "left",
+      });
+      ScrollReveal().reveal(".hero-btn, .highlight-btn", {
+        delay: 150,
+        duration: 1500,
+        origin: "bottom",
+      });
+      ScrollReveal().reveal(".hero-img, .jelajahi-img", {
+        delay: 200,
+        duration: 2000,
+        origin: "right",
+      });
+      ScrollReveal().reveal(".partner-slide, .testimonial-slide", {
+        distance: "0px",
+        delay: 150,
+        duration: 1000,
+        opacity: 0,
+      });
+    </script>
+  </body>
+</html>

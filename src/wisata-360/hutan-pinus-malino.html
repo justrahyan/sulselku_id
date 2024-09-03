@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sulselku - Pesona Sulawesi Selatan</title>
+
+    <!-- Tailwind CSS -->
+    <link href="../output.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabriela&family=Red+Hat+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../public/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../public/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../public/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../public/favicon_io/site.webmanifest" />
+
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body class="font-poppins bg-white-new">
+    <!-- Navbar -->
+    <header class="w-full py-5 fixed z-50 bg-white-new">
+      <nav
+        class="container mx-auto px-4 flex justify-between items-center lg:px-36"
+      >
+        <!-- Logo -->
+        <h1 class="font-gabriela text-primary text-lg md:text-2xl">
+          <a href="../../index.html">Sulselku.</a>
+        </h1>
+
+        <!-- Menu -->
+        <div
+          class="hidden lg:flex gap-7 text-paragraph font-medium items-center"
+          id="navbarMenu"
+        >
+          <ul class="flex gap-7 items-center">
+            <li>
+              <a href="../../index.html" class="text-sm hover:text-primary"
+                >Beranda</a
+              >
+            </li>
+            <li class="relative">
+              <a
+                onclick="destinationDropdown()"
+                class="text-sm flex items-center cursor-pointer hover:text-primary"
+              >
+                Destinasi
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-3 ml-1 transition-transform duration-300"
+                  id="dropdownIcon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </a>
+              <!-- Menu Dropdown Destinasi -->
+              <div
+                id="destinationDropmenu"
+                class="hidden absolute left-0 mt-1 flex w-96 bg-white-new border rounded shadow-lg p-2 z-50"
+              >
+                <div class="flex flex-col w-full">
+                  <a
+                    href="../destinasi/alam.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Alam</a
+                  >
+                  <a
+                    href="../destinasi/kuliner.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Kuliner</a
+                  >
+                  <a
+                    href="../destinasi/budaya.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Budaya</a
+                  >
+                </div>
+                <div class="flex flex-col w-full">
+                  <a
+                    href="../destinasi/akomodasi.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Akomodasi</a
+                  >
+                  <a
+                    href="../destinasi/belanja.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Belanja</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="../wisata-360.html"
+                class="text-sm text-primary font-bold hover:text-primary"
+                >Wisata 360°</a
+              >
+            </li>
+            <li>
+              <a href="../tentang.html" class="text-sm hover:text-primary"
+                >Tentang</a
+              >
+            </li>
+            <li>
+              <a href="../kontak.html" class="text-sm hover:text-primary"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pencarian dan Hamburger -->
+        <div class="flex items-center">
+          <!-- Pencarian -->
+          <div class="relative mr-2">
+            <button
+              id="searchButton"
+              class="text-primary h-7 w-7 flex items-center justify-center rounded-full transition duration-300 ease-in-out hover:text-white-new hover:bg-primary"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21L15.803 15.803M15.803 15.803A7.5 7.5 0 105.197 5.197a7.5 7.5 0 0010.606 10.606z"
+                />
+              </svg>
+            </button>
+          </div>
+          <!-- Hamburger Button -->
+          <button
+            id="hamburgerButton"
+            class="lg:hidden flex items-center text-primary"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 transition-transform duration-300 ease-in-out"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 5.25h16.5m-16.5 6h16.5m-16.5 6h16.5"
+                class="hamburger-icon origin-center transition-opacity duration-300 ease-in-out"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+                class="close-icon origin-center transition-opacity duration-300 ease-in-out opacity-0"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Menu Mobile -->
+      <div
+        id="mobileMenu"
+        class="hidden fixed lg:hidden bg-white-new z-50 w-full h-full transition-all duration-300 ease-in-out"
+      >
+        <ul class="flex flex-col gap-2 p-4">
+          <li>
+            <a
+              href="../../index.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Beranda</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-sm p-2 flex items-center justify-between rounded hover:bg-gray-100"
+              onclick="mobileDestinationDropdown()"
+            >
+              Destinasi
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-3 ml-1 transition-transform duration-300"
+                id="mobileDropdownIcon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </a>
+            <!-- Menu Dropdown Destination Mobile -->
+            <ul id="mobileDestinationSubmenu" class="hidden pl-4 space-y-2">
+              <li>
+                <a
+                  href="../destinasi/alam.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Alam</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../destinasi/kuliner.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Kuliner</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../destinasi/budaya.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Budaya</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../destinasi/akomodasi.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Akomodasi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../destinasi/belanja.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Belanja</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="../wisata-360.html"
+              class="text-sm p-2 block rounded text-primary font-bold hover:bg-gray-100"
+              >Wisata 360°</a
+            >
+          </li>
+          <li>
+            <a
+              href="../tentang.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Tentang</a
+            >
+          </li>
+          <li>
+            <a
+              href="../kontak.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Kontak</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div
+      id="searchPopup"
+      class="fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center hidden z-50"
+    >
+      <div class="bg-white border rounded px-5 py-3 w-2/3 max-w-lg">
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-5 h-5 text-gray-400"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21L15.803 15.803M15.803 15.803A7.5 7.5 0 105.197 5.197a7.5 7.5 0 0010.606 10.606z"
+            />
+          </svg>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Cari..."
+            class="bg-transparent text-gray-700 ml-3 w-full focus:outline-none"
+            oninput="searchResults(this.value)"
+          />
+        </div>
+        <!-- Menampilkan hasil pencarian -->
+        <div id="search-results" class="mt-3 overflow-hidden"></div>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <section>
+      <header class="w-full lg:pt-32 md:pt-28 pt-24 pb-14">
+        <div class="container mx-auto px-4 lg:px-24 xl:px-48">
+          <!-- Alam Heading -->
+          <div
+            class="w-full flex flex-col items-center justify-center text-center mx-auto mb-10"
+          >
+            <h3
+              class="content-heading text-paragraph font-bold text-3xl capitalize md:max-w-2xl w-xl leading-tight mb-6 lg:text-4xl xl:text-5xl"
+            >
+              Hutan Pinus Malino
+            </h3>
+            <p
+              class="bread-crumbs leading-relaxed text-grey-second text-xs md:text-sm capitalize md:w-[60%]"
+            >
+              <a href="../../index.html" class="hover:underline">Beranda</a> >
+              <a href="../wisata-360.html" class="hover:underline"
+                >Wisata 360°</a
+              >
+              > Hutan Pinus Malino
+            </p>
+          </div>
+          <!-- Alam Tab Switch -->
+          <div class="w-full grid place-items-center">
+            <div class="card-all w-full">
+              <!-- Card 1 -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1724505111559!6m8!1m7!1sCAoSLEFGMVFpcFBSZDdxOHFzMWZpUndJREM5RGZNUjFSTV9zWXZPZTM3WDZ2QlNl!2m2!1d-5.2609242!2d119.8148132!3f48.58474435773353!4f-27.60065764943775!5f0.7820865974627469"
+                width="100%"
+                class="rounded-lg h-[400px] md:h-[650px]"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <footer class="w-full md:pb-20 py-8">
+      <div class="mx-auto px-4 lg:px-24 xl:px-48">
+        <!--Footer Content-->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8"
+        >
+          <!-- Logo -->
+          <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
+            <a
+              href="../../index.html"
+              class="flex justify-center lg:justify-start text-primary text-3xl font-bold font-gabriela"
+            >
+              Sulselku.
+            </a>
+            <p
+              class="py-8 text-sm text-grey-second lg:max-w-xs text-center lg:text-left"
+            >
+              Temukan inspirasi, informasi wisata, dan pengalaman unik yang kami
+              sajikan. Bersama kita majukan pariwisata Sulsel!
+            </p>
+          </div>
+          <!-- Menu Sulselku -->
+          <div class="lg:mx-auto text-left">
+            <h4 class="text-lg text-gray-900 font-semibold mb-7">
+              Menu Sulselku
+            </h4>
+            <ul class="text-sm transition-all duration-500">
+              <li class="mb-6">
+                <a
+                  href="../../index.html"
+                  class="text-grey-second hover:text-primary"
+                  >Beranda</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../wisata-360.html"
+                  class="text-grey-second hover:text-primary"
+                  >Wisata 360°</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../tentang.html"
+                  class="text-grey-second hover:text-primary"
+                  >Tentang</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../kontak.html"
+                  class="text-grey-second hover:text-primary"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Kategori Destinasi -->
+          <div class="lg:mx-auto text-left">
+            <h4 class="text-lg text-gray-900 font-semibold mb-7">
+              Kategori Destinasi
+            </h4>
+            <ul class="text-sm transition-all duration-500">
+              <li class="mb-6">
+                <a
+                  href="../destinasi/alam.html"
+                  class="text-grey-second hover:text-primary"
+                  >Alam</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../destinasi/kuliner.html"
+                  class="text-grey-second hover:text-primary"
+                  >Kuliner</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../destinasi/budaya.html"
+                  class="text-grey-second hover:text-primary"
+                  >Budaya</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../destinasi/akomodasi.html"
+                  class="text-grey-second hover:text-primary"
+                  >Akomodasi</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../destinasi/belanja.html"
+                  class="text-grey-second hover:text-primary"
+                  >Belanja</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Bottom Footer -->
+        <div class="py-7 border-t border-gray-200">
+          <div
+            class="flex items-center justify-center flex-col lg:justify-between lg:flex-row"
+          >
+            <span class="text-sm text-gray-500"
+              >©<a href="../../index.html" class="text-primary"> Sulselku.</a>
+              2024, All rights reserved.</span
+            >
+            <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0">
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-instagram group-hover:text-primary text-white-new text-lg"
+                ></i>
+              </a>
+              <a
+                href="https://www.x.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-twitter group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-tiktok group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-youtube group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Main JS -->
+    <script src="js/script.js"></script>
+
+    <!-- Scroll Reveal -->
+    <script>
+      ScrollReveal({
+        reset: false,
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+      });
+
+      ScrollReveal().reveal(".content-heading", {
+        delay: 150,
+        duration: 1500,
+        origin: "top",
+      });
+      ScrollReveal().reveal(".bread-crumbs", {
+        delay: 250,
+        duration: 2500,
+        origin: "top",
+      });
+      ScrollReveal().reveal(".card-all", {
+        delay: 250,
+        duration: 1500,
+        origin: "bottom",
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sulselku - Pesona Sulawesi Selatan</title>
+
+    <!-- Tailwind CSS -->
+    <link href="../../output.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabriela&family=Red+Hat+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../public/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../public/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../public/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../public/favicon_io/site.webmanifest" />
+
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body class="font-poppins bg-white-new">
+    <!-- Navbar -->
+    <header class="w-full py-5 fixed z-50 bg-white-new">
+      <nav
+        class="container mx-auto px-4 flex justify-between items-center lg:px-36"
+      >
+        <!-- Logo -->
+        <h1 class="font-gabriela text-primary text-lg md:text-2xl">
+          <a href="../../../index.html">Sulselku.</a>
+        </h1>
+
+        <!-- Menu -->
+        <div
+          class="hidden lg:flex gap-7 text-paragraph font-medium items-center"
+          id="navbarMenu"
+        >
+          <ul class="flex gap-7 items-center">
+            <li>
+              <a href="../../../index.html" class="text-sm hover:text-primary"
+                >Beranda</a
+              >
+            </li>
+            <li class="relative">
+              <a
+                onclick="destinationDropdown()"
+                class="text-sm flex text-primary font-bold items-center cursor-pointer"
+              >
+                Destinasi
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-3 ml-1 transition-transform duration-300"
+                  id="dropdownIcon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </a>
+              <!-- Menu Dropdown Destinasi -->
+              <div
+                id="destinationDropmenu"
+                class="hidden absolute left-0 mt-1 flex w-96 bg-white-new border rounded shadow-lg p-2 z-50"
+              >
+                <div class="flex flex-col w-full">
+                  <a
+                    href="../alam.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Alam</a
+                  >
+                  <a
+                    href="../kuliner.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Kuliner</a
+                  >
+                  <a
+                    href="../budaya.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Budaya</a
+                  >
+                </div>
+                <div class="flex flex-col w-full">
+                  <a
+                    href="../akomodasi.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Akomodasi</a
+                  >
+                  <a
+                    href="../belanja.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Belanja</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="../../wisata-360.html" class="text-sm hover:text-primary"
+                >Wisata 360°</a
+              >
+            </li>
+            <li>
+              <a href="../../tentang.html" class="text-sm hover:text-primary"
+                >Tentang</a
+              >
+            </li>
+            <li>
+              <a href="../../kontak.html" class="text-sm hover:text-primary"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pencarian dan Hamburger -->
+        <div class="flex items-center">
+          <!-- Pencarian -->
+          <div class="relative mr-2">
+            <button
+              id="searchButton"
+              class="text-primary h-7 w-7 flex items-center justify-center rounded-full transition duration-300 ease-in-out hover:text-white-new hover:bg-primary"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21L15.803 15.803M15.803 15.803A7.5 7.5 0 105.197 5.197a7.5 7.5 0 0010.606 10.606z"
+                />
+              </svg>
+            </button>
+          </div>
+          <!-- Hamburger Button -->
+          <button
+            id="hamburgerButton"
+            class="lg:hidden flex items-center text-primary"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 transition-transform duration-300 ease-in-out"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 5.25h16.5m-16.5 6h16.5m-16.5 6h16.5"
+                class="hamburger-icon origin-center transition-opacity duration-300 ease-in-out"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+                class="close-icon origin-center transition-opacity duration-300 ease-in-out opacity-0"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Menu Mobile -->
+      <div
+        id="mobileMenu"
+        class="hidden fixed lg:hidden bg-white-new z-50 w-full h-full transition-all duration-300 ease-in-out"
+      >
+        <ul class="flex flex-col gap-2 p-4">
+          <li>
+            <a
+              href="../../../index.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Beranda</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-sm text-primary font-bold p-2 flex items-center justify-between rounded hover:bg-gray-100"
+              onclick="mobileDestinationDropdown()"
+            >
+              Destinasi
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-3 ml-1 transition-transform duration-300"
+                id="mobileDropdownIcon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </a>
+            <!-- Menu Dropdown Destination Mobile -->
+            <ul id="mobileDestinationSubmenu" class="hidden pl-4 space-y-2">
+              <li>
+                <a
+                  href="../alam.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Alam</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../kuliner.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Kuliner</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../budaya.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Budaya</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../akomodasi.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Akomodasi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../belanja.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Belanja</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="../../wisata-360.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Wisata 360°</a
+            >
+          </li>
+          <li>
+            <a
+              href="../../tentang.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Tentang</a
+            >
+          </li>
+          <li>
+            <a
+              href="../../kontak.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Kontak</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div
+      id="searchPopup"
+      class="fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center hidden z-50"
+    >
+      <div class="bg-white border rounded px-5 py-3 w-2/3 max-w-lg">
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-5 h-5 text-gray-400"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21L15.803 15.803M15.803 15.803A7.5 7.5 0 105.197 5.197a7.5 7.5 0 0010.606 10.606z"
+            />
+          </svg>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Cari..."
+            class="bg-transparent text-gray-700 ml-3 w-full focus:outline-none"
+            oninput="searchResults(this.value)"
+          />
+        </div>
+        <!-- Menampilkan hasil pencarian -->
+        <div id="search-results" class="mt-3 overflow-hidden"></div>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <section>
+      <header class="w-full lg:pt-32 md:pt-28 pt-24 pb-14">
+        <div class="container mx-auto px-4 lg:px-24 xl:px-48">
+          <!-- Heading -->
+          <div
+            class="w-full flex flex-col items-center justify-center text-center mx-auto mb-10"
+          >
+            <h3
+              class="content-heading text-paragraph font-bold text-3xl capitalize w-xl leading-tight mb-6 lg:text-4xl xl:text-5xl"
+            >
+              Rumah Adat Saoraja
+            </h3>
+            <p
+              class="bread-crumbs leading-relaxed text-grey-second text-xs md:text-sm capitalize md:w-[60%]"
+            >
+              <a href="../../../index.html" class="hover:underline">Beranda</a>
+              > Destinasi >
+              <a href="../budaya.html" class="hover:underline"> Budaya</a> >
+              Rumah Adat Saoraja
+            </p>
+          </div>
+          <!-- Content -->
+          <div class="slider-container w-full grid place-items-center">
+            <div class="w-full">
+              <div class="border"></div>
+              <!-- Info -->
+              <div class="info my-4 text-xs md:text-sm">
+                <p>
+                  Oleh <span class="font-semibold text-primary">Admin</span> -
+                  Desember 21, 2023
+                </p>
+              </div>
+              <!-- Image -->
+              <div
+                class="rounded-lg overflow-hidden w-full lg:h-96 flex items-center justify-center border"
+              >
+                <img
+                  src="../../../public/img/rumah-adat-bugis.jpg"
+                  alt="Rumah Adat Saoraja"
+                  class="w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Description -->
+              <div class="card-text py-4">
+                <p
+                  class="text-paragraph indent-8 text-xs md:text-base font-normal text-justify mb-2"
+                >
+                  Suku Bugis adalah salah satu kelompok etnis yang mendiami
+                  Provinsi Sulawesi Selatan, khususnya di daerah pesisir dan
+                  dataran rendah. Rumah adat suku Bugis dapat ditemukan di
+                  berbagai daerah seperti Luwu, Bone, Wajo, Soppeng, Sidrap,
+                  Pinrang, Sinjai, dan Barru. Rumah adat ini memiliki keunikan
+                  dalam teknik konstruksinya, di mana sambungan antar kayu
+                  dilakukan tanpa menggunakan besi atau paku, berkat metode
+                  tradisional yang diwariskan turun-temurun.
+                  <br />
+                </p>
+                <p
+                  class="text-paragraph indent-8 text-xs md:text-base font-normal text-justify mb-2"
+                >
+                  Salah satu jenis rumah adat Bugis yang sering digunakan oleh
+                  kalangan bangsawan adalah Saoraja, yang berarti "tempat
+                  tinggal besar" dan berfungsi sebagai hunian bagi raja atau
+                  kaum bangsawan. Rumah Saoraja terdiri dari tiga bagian utama:
+                  Rakkaeng untuk penyimpanan barang berharga dan makanan, Bola
+                  atau Kalle Bala yang merupakan ruang untuk kamar, memasak, dan
+                  menerima tamu, serta Awasao atau passiringan yang digunakan
+                  untuk menyimpan alat pertanian dan perkakas.
+                </p>
+              </div>
+
+              <!-- Informasi Lainnya -->
+              <div
+                class="card-info w-full border border-gray-300 rounded-lg px-4 py-6"
+              >
+                <div
+                  class="heading flex flex-row items-center mb-4 gap-2 md:gap-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 md:size-8"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+                    />
+                  </svg>
+                  <span class="font-medium text-sm md:text-base"
+                    >Informasi Lainnya</span
+                  >
+                </div>
+                <div class="border border-gray-300 mb-4"></div>
+                <div
+                  class="info-wrap-container flex flex-col md:flex-row space-y-3"
+                >
+                  <div class="info-wrap-1 space-y-5 w-full md:w-1/2">
+                    <div class="info-1 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i class="fa-solid fa-house text-paragraph"></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Nama Rumah</span
+                        >
+                      </div>
+                      <div
+                        class="ml-7 mr-auto text-xs md:text-sm flex flex-col"
+                      >
+                        <p class="text-xs md:text-sm">Rumah Adat Saoraja</p>
+                      </div>
+                    </div>
+                    <div class="info-2 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-3">
+                        <i
+                          class="fa-solid fa-location-dot text-lg text-paragraph"
+                        ></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Lokasi</span
+                        >
+                      </div>
+                      <div
+                        class="ml-6 mr-auto text-xs md:w-[80%] md:text-sm flex flex-col"
+                      >
+                        <p class="text-xs md:text-sm">
+                          Saoraja dapat ditemukan di daerah pesisir dan dataran
+                          rendah di Provinsi Sulawesi Selatan seperti Luwu,
+                          Bone, Wajo, dan lainnya
+                        </p>
+                      </div>
+                    </div>
+                    <div class="info-3 w-full lg:w-[80%] flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i
+                          class="fa-solid fa-vector-square text-lg text-paragraph"
+                        ></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Struktur</span
+                        >
+                      </div>
+                      <div class="ml-6 text-xs md:text-sm flex flex-col">
+                        <p class="text-xs md:text-sm">
+                          Konstruksi kayu dengan sambungan tanpa paku atau besi,
+                          dibagi menjadi tiga bagian utama
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info-wrap-2 space-y-5 w-full md:w-1/2">
+                    <div class="info-1 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i class="fa-solid fa-list text-paragraph"></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Bagian Saoraja</span
+                        >
+                      </div>
+                      <div
+                        class="ml-11 text-sm flex md:flex-row flex-col md:space-x-8 space-y-4 md:space-y-0"
+                      >
+                        <ul class="list-disc capitalize">
+                          <li>
+                            <p class="text-xs md:text-sm">
+                              Ruang tempat penyimpanan, baik barang berharga
+                              maupun gudang makanan di rumah Saoraja disebut
+                              Rakkaeng.
+                            </p>
+                          </li>
+                          <li>
+                            <p class="text-xs md:text-sm">
+                              Ruang khusus untuk dihuni seperti kamar, ruang
+                              memasak, ataupun ruang menyambut tamu di rumah
+                              Saoraja disebut Bola atau Kalle Bala.
+                            </p>
+                          </li>
+                          <li>
+                            <p class="text-xs md:text-sm">
+                              Ruang untuk menyimpan perkakas dan alat bertani di
+                              rumah Saoraja disebut Awasao atau passiringan.
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="info-2 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i
+                          class="fa-regular fa-circle-question text-paragraph"
+                        ></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Fungsi</span
+                        >
+                      </div>
+                      <div
+                        class="ml-11 mr-auto text-xs md:text-sm flex flex-col"
+                      >
+                        <ul class="list-disc">
+                          <li>
+                            <p class="text-xs md:text-sm">
+                              Hunian untuk kalangan bangsawan
+                            </p>
+                          </li>
+                          <li>
+                            <p class="text-xs md:text-sm">
+                              Menyimpan barang berharga dan alat pertanian
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="info-3 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i
+                          class="fa-solid fa-quote-left text-lg text-paragraph"
+                        ></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Makna Arsitektur</span
+                        >
+                      </div>
+                      <div class="ml-6 text-xs md:text-sm">
+                        <p>
+                          Menunjukkan status sosial dan fungsi rumah yang
+                          meliputi penyimpanan barang, ruang tinggal, dan alat
+                          pertanian
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <footer class="w-full md:pb-20 py-8">
+      <div class="mx-auto px-4 lg:px-24 xl:px-48">
+        <!--Footer Content-->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8"
+        >
+          <!-- Logo -->
+          <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
+            <a
+              href="../../../index.html"
+              class="flex justify-center lg:justify-start text-primary text-3xl font-bold font-gabriela"
+            >
+              Sulselku.
+            </a>
+            <p
+              class="py-8 text-sm text-grey-second lg:max-w-xs text-center lg:text-left"
+            >
+              Temukan inspirasi, informasi wisata, dan pengalaman unik yang kami
+              sajikan. Bersama kita majukan pariwisata Sulsel!
+            </p>
+          </div>
+          <!-- Menu Sulselku -->
+          <div class="lg:mx-auto text-left">
+            <h4 class="text-lg text-gray-900 font-semibold mb-7">
+              Menu Sulselku
+            </h4>
+            <ul class="text-sm transition-all duration-500">
+              <li class="mb-6">
+                <a
+                  href="../../../index.html"
+                  class="text-grey-second hover:text-primary"
+                  >Beranda</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../../wisata-360.html"
+                  class="text-grey-second hover:text-primary"
+                  >Wisata 360°</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../../tentang.html"
+                  class="text-grey-second hover:text-primary"
+                  >Tentang</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../../kontak.html"
+                  class="text-grey-second hover:text-primary"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Kategori Destinasi -->
+          <div class="lg:mx-auto text-left">
+            <h4 class="text-lg text-gray-900 font-semibold mb-7">
+              Kategori Destinasi
+            </h4>
+            <ul class="text-sm transition-all duration-500">
+              <li class="mb-6">
+                <a
+                  href="../alam.html"
+                  class="text-grey-second hover:text-primary"
+                  >Alam</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../kuliner.html"
+                  class="text-grey-second hover:text-primary"
+                  >Kuliner</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../budaya.html"
+                  class="text-grey-second hover:text-primary"
+                  >Budaya</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../akomodasi.html"
+                  class="text-grey-second hover:text-primary"
+                  >Akomodasi</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../belanja.html"
+                  class="text-grey-second hover:text-primary"
+                  >Belanja</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Bottom Footer -->
+        <div class="py-7 border-t border-gray-200">
+          <div
+            class="flex items-center justify-center flex-col lg:justify-between lg:flex-row"
+          >
+            <span class="text-sm text-gray-500"
+              >©<a href="../../../index.html" class="text-primary">
+                Sulselku.</a
+              >
+              2024, All rights reserved.</span
+            >
+            <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0">
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-instagram group-hover:text-primary text-white-new text-lg"
+                ></i>
+              </a>
+              <a
+                href="https://www.x.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-twitter group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-tiktok group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-youtube group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Main JS -->
+    <script src="../js/article.js"></script>
+
+    <!-- Scroll Reveal -->
+    <script>
+      ScrollReveal({
+        reset: false,
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+      });
+
+      ScrollReveal().reveal(".content-heading, .tab-switch", {
+        delay: 150,
+        duration: 1500,
+        origin: "top",
+      });
+      ScrollReveal().reveal(".bread-crumbs", {
+        delay: 250,
+        duration: 2500,
+        origin: "top",
+      });
+      ScrollReveal().reveal(".slider-container", {
+        delay: 250,
+        duration: 1500,
+        origin: "bottom",
+      });
+    </script>
+  </body>
+</html>

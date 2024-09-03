@@ -1,0 +1,85 @@
+/* Scroll Smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar Start */
+.shadow-header {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+/* Navbar End */
+
+/* Slider Highlight for Mobile Start */
+@media (max-width: 768px) {
+  #highlight-slider {
+    padding: 0 16px; /* Tambahkan padding di kiri dan kanan */
+  }
+}
+/* Slider Highlight for Mobile End */
+
+/* Popular Card Start */
+.card-popular:hover .card-data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.card-popular:hover {
+  animation: remove-overflow 2s forwards;
+}
+.card-popular:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+.card-popular:not(:hover) .card-data {
+  animation: remove-data 1s forwards;
+}
+@keyframes show-data {
+  50% {
+    transform: translateY(-4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+@keyframes remove-data {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+/* Popular Card End */
+
+/* Jarak Data Search Start */
+#search-results {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-result {
+  margin-bottom: 10px;
+}
+/* Jarak Data Search End */
+
+/* Testimoni Card Mobile Start */
+@media (max-width: 767px) {
+  .testimonial-slide > div {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+  }
+}
+/* Testimoni Card Mobile End */

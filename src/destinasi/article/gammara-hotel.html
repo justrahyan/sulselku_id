@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sulselku - Pesona Sulawesi Selatan</title>
+
+    <!-- Tailwind CSS -->
+    <link href="../../output.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabriela&family=Red+Hat+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../../public/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../public/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../../public/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../../public/favicon_io/site.webmanifest" />
+
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body class="font-poppins bg-white-new">
+    <!-- Navbar -->
+    <header class="w-full py-5 fixed z-50 bg-white-new">
+      <nav
+        class="container mx-auto px-4 flex justify-between items-center lg:px-36"
+      >
+        <!-- Logo -->
+        <h1 class="font-gabriela text-primary text-lg md:text-2xl">
+          <a href="../../../index.html">Sulselku.</a>
+        </h1>
+
+        <!-- Menu -->
+        <div
+          class="hidden lg:flex gap-7 text-paragraph font-medium items-center"
+          id="navbarMenu"
+        >
+          <ul class="flex gap-7 items-center">
+            <li>
+              <a href="../../../index.html" class="text-sm hover:text-primary"
+                >Beranda</a
+              >
+            </li>
+            <li class="relative">
+              <a
+                onclick="destinationDropdown()"
+                class="text-sm flex text-primary font-bold items-center cursor-pointer"
+              >
+                Destinasi
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-3 ml-1 transition-transform duration-300"
+                  id="dropdownIcon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </a>
+              <!-- Menu Dropdown Destinasi -->
+              <div
+                id="destinationDropmenu"
+                class="hidden absolute left-0 mt-1 flex w-96 bg-white-new border rounded shadow-lg p-2 z-50"
+              >
+                <div class="flex flex-col w-full">
+                  <a
+                    href="../alam.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Alam</a
+                  >
+                  <a
+                    href="../kuliner.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Kuliner</a
+                  >
+                  <a
+                    href="../budaya.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Budaya</a
+                  >
+                </div>
+                <div class="flex flex-col w-full">
+                  <a
+                    href="../akomodasi.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Akomodasi</a
+                  >
+                  <a
+                    href="../belanja.html"
+                    class="block px-4 py-2 text-sm text-paragraph hover:text-primary hover:bg-gray-100"
+                    >Belanja</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="../../wisata-360.html" class="text-sm hover:text-primary"
+                >Wisata 360°</a
+              >
+            </li>
+            <li>
+              <a href="../../tentang.html" class="text-sm hover:text-primary"
+                >Tentang</a
+              >
+            </li>
+            <li>
+              <a href="../../kontak.html" class="text-sm hover:text-primary"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pencarian dan Hamburger -->
+        <div class="flex items-center">
+          <!-- Pencarian -->
+          <div class="relative mr-2">
+            <button
+              id="searchButton"
+              class="text-primary h-7 w-7 flex items-center justify-center rounded-full transition duration-300 ease-in-out hover:text-white-new hover:bg-primary"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21L15.803 15.803M15.803 15.803A7.5 7.5 0 105.197 5.197a7.5 7.5 0 0010.606 10.606z"
+                />
+              </svg>
+            </button>
+          </div>
+          <!-- Hamburger Button -->
+          <button
+            id="hamburgerButton"
+            class="lg:hidden flex items-center text-primary"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 transition-transform duration-300 ease-in-out"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 5.25h16.5m-16.5 6h16.5m-16.5 6h16.5"
+                class="hamburger-icon origin-center transition-opacity duration-300 ease-in-out"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+                class="close-icon origin-center transition-opacity duration-300 ease-in-out opacity-0"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Menu Mobile -->
+      <div
+        id="mobileMenu"
+        class="hidden fixed lg:hidden bg-white-new z-50 w-full h-full transition-all duration-300 ease-in-out"
+      >
+        <ul class="flex flex-col gap-2 p-4">
+          <li>
+            <a
+              href="../../../index.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Beranda</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-sm text-primary font-bold p-2 flex items-center justify-between rounded hover:bg-gray-100"
+              onclick="mobileDestinationDropdown()"
+            >
+              Destinasi
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-3 ml-1 transition-transform duration-300"
+                id="mobileDropdownIcon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </a>
+            <!-- Menu Dropdown Destination Mobile -->
+            <ul id="mobileDestinationSubmenu" class="hidden pl-4 space-y-2">
+              <li>
+                <a
+                  href="../alam.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Alam</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../kuliner.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Kuliner</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../budaya.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Budaya</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../akomodasi.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Akomodasi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../belanja.html"
+                  class="text-sm py-1 px-2 block rounded hover:bg-gray-100"
+                  >Belanja</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="../../wisata-360.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Wisata 360°</a
+            >
+          </li>
+          <li>
+            <a
+              href="../../tentang.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Tentang</a
+            >
+          </li>
+          <li>
+            <a
+              href="../../kontak.html"
+              class="text-sm p-2 block rounded hover:bg-gray-100"
+              >Kontak</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div
+      id="searchPopup"
+      class="fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center hidden z-50"
+    >
+      <div class="bg-white border rounded px-5 py-3 w-2/3 max-w-lg">
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-5 h-5 text-gray-400"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21L15.803 15.803M15.803 15.803A7.5 7.5 0 105.197 5.197a7.5 7.5 0 0010.606 10.606z"
+            />
+          </svg>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Cari..."
+            class="bg-transparent text-gray-700 ml-3 w-full focus:outline-none"
+            oninput="searchResults(this.value)"
+          />
+        </div>
+        <!-- Menampilkan hasil pencarian -->
+        <div id="search-results" class="mt-3 overflow-hidden"></div>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <section>
+      <header class="w-full lg:pt-32 md:pt-28 pt-24 pb-14">
+        <div class="container mx-auto px-4 lg:px-24 xl:px-48">
+          <!-- Heading -->
+          <div
+            class="w-full flex flex-col items-center justify-center text-center mx-auto mb-10"
+          >
+            <h3
+              class="content-heading text-paragraph font-bold text-3xl capitalize md:max-w-2xl w-xl leading-tight mb-6 lg:text-4xl xl:text-5xl"
+            >
+              Gammara Hotel
+            </h3>
+            <p
+              class="bread-crumbs leading-relaxed text-grey-second text-xs md:text-sm capitalize md:w-[60%]"
+            >
+              <a href="../../../index.html" class="hover:underline">Beranda</a>
+              > Destinasi >
+              <a href="../akomodasi.html" class="hover:underline"> Akomodasi</a>
+              > Gammara Hotel
+            </p>
+          </div>
+          <!-- Content -->
+          <div class="slider-container w-full grid place-items-center">
+            <div class="w-full">
+              <div class="border"></div>
+              <!-- Info -->
+              <div
+                class="info flex flex-col xl:flex-row justify-between items-start my-4 text-xs md:text-sm space-y-4 xl:space-y-0"
+              >
+                <div class="info-left space-y-4">
+                  <p class="location flex flex-row items-center">
+                    <span class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-8 sm:size-7 md:size-5 mr-2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                        />
+                      </svg>
+                      Jl. Metro Tj. Bunga, Kp. Buyang, Kec. Mariso, Kota
+                      Makassar, Sulawesi Selatan 90121
+                    </span>
+                    <button
+                      id="lihatPeta"
+                      class="ml-0 mt-2 sm:ml-4 sm:mt-0 font-semibold text-primary"
+                    >
+                      Lihat Peta
+                    </button>
+                  </p>
+                </div>
+                <div class="info-right">
+                  <p>
+                    Oleh <span class="font-semibold text-primary">Admin</span> -
+                    Desember 21, 2023
+                  </p>
+                </div>
+              </div>
+              <!-- Image -->
+              <div
+                class="rounded-lg overflow-hidden w-full lg:h-96 flex items-center justify-center border"
+              >
+                <img
+                  src="../../../public/img/gammara-hotel.jpg"
+                  alt="Gammara Hotel"
+                  class="w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Description -->
+              <div class="card-text py-4">
+                <p
+                  class="text-paragraph indent-8 text-xs md:text-base font-normal text-justify mb-2"
+                >
+                  <span class="font-bold"> Gammara Hotel </span> adalah pilihan
+                  akomodasi yang sempurna untuk pelancong yang mencari
+                  kenyamanan di jantung kota Makassar. Hotel ini menawarkan
+                  berbagai tipe kamar mulai dari Superior hingga Suite yang
+                  dilengkapi dengan fasilitas modern seperti Wi-Fi gratis,
+                  televisi layar datar, dan area duduk yang nyaman. Dengan
+                  dekorasi yang elegan dan sentuhan lokal, setiap kamar
+                  dirancang untuk memberikan pengalaman menginap yang
+                  menyenangkan. Hotel ini juga menyediakan berbagai fasilitas
+                  pendukung, seperti kolam renang, pusat kebugaran, dan restoran
+                  yang menyajikan beragam hidangan lokal dan internasional.
+                  <br />
+                </p>
+                <p
+                  class="text-paragraph indent-8 text-xs md:text-base font-normal text-justify"
+                >
+                  Selain itu, Gammara Hotel Makassar memiliki lokasi strategis
+                  yang memudahkan para tamu untuk menjelajahi berbagai destinasi
+                  menarik di kota Makassar. Berada dekat dengan Pantai Losari
+                  dan Trans Studio Makassar, hotel ini cocok untuk tamu yang
+                  ingin mengeksplorasi keindahan alam dan pusat hiburan di
+                  sekitar kota. Layanan ramah dan profesional dari staf hotel
+                  juga memastikan setiap kebutuhan tamu terpenuhi dengan baik,
+                  menjadikan Gammara Hotel sebagai pilihan ideal bagi wisatawan
+                  bisnis maupun liburan.
+                </p>
+              </div>
+
+              <!-- Informasi Lainnya -->
+              <div
+                class="card-info w-full border border-gray-300 rounded-lg px-4 py-6 mb-6"
+              >
+                <div
+                  class="heading flex flex-row items-center mb-4 gap-2 md:gap-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 md:size-8"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+                    />
+                  </svg>
+                  <span class="font-medium text-sm md:text-base"
+                    >Informasi Lainnya</span
+                  >
+                </div>
+                <div class="border border-gray-300 mb-4"></div>
+                <div
+                  class="info-wrap-container flex flex-col md:flex-row space-y-3"
+                >
+                  <div class="info-wrap-1 space-y-5 w-full md:w-1/2">
+                    <div class="info-1 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i class="fa-solid fa-hotel text-paragraph"></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Nama Hotel</span
+                        >
+                      </div>
+                      <div
+                        class="ml-7 mr-auto text-xs md:text-sm flex flex-col space-y-4"
+                      >
+                        <p>Gammara Hotel</p>
+                      </div>
+                    </div>
+                    <div class="info-2 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i class="fa-solid fa-route text-xl text-paragraph"></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Rute Akses</span
+                        >
+                      </div>
+                      <div
+                        class="ml-7 mr-auto text-xs md:text-sm flex flex-col"
+                      >
+                        <button id="lihatRute" class="underline">
+                          Cek Rute
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="info-3 w-full lg:w-[80%] flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i class="fa-solid fa-bed text-lg text-paragraph"></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Tipe Kamar</span
+                        >
+                      </div>
+                      <div
+                        class="ml-7 text-xs md:text-sm flex flex-col space-y-4"
+                      >
+                        <div class="room flex gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Cottage 3 bedroom
+                          </p>
+                        </div>
+                        <div class="room flex gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Cottage 2 bedroom
+                          </p>
+                        </div>
+                        <div class="room flex gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Executive Suite Room
+                          </p>
+                        </div>
+                        <div class="room flex gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Superior King Room
+                          </p>
+                        </div>
+                        <div class="room flex gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Superior Twin Room
+                          </p>
+                        </div>
+                        <div class="room flex gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <p class="ml-1 text-xs md:text-sm">Handicap Room</p>
+                        </div>
+                        <div class="room flex gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <p class="ml-1 text-xs md:text-sm">Deluxe Room</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="info-6 w-full lg:w-[80%] flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i
+                          class="fa-solid fa-circle-info text-lg text-paragraph"
+                        ></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Kebijakan</span
+                        >
+                      </div>
+                      <div
+                        class="ml-7 text-xs md:text-sm flex flex-col space-y-4"
+                      >
+                        <div class="check-in flex gap-2 items-center">
+                          <i
+                            class="fa-solid fa-arrow-right-to-bracket text-grey-second"
+                          ></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Check-in: 15:00 - 23:59
+                          </p>
+                        </div>
+                        <div class="check-out flex gap-2 items-center">
+                          <i
+                            class="fa-solid fa-arrow-right-from-bracket text-grey-second"
+                          ></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Check-out: 12:00
+                          </p>
+                        </div>
+                        <div class="deposit flex gap-2 items-center">
+                          <i
+                            class="fa-solid fa-money-bill-transfer text-grey-second"
+                          ></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Deposit: Tamu perlu membayar deposit saat check-in.
+                          </p>
+                        </div>
+                        <div class="sarapan flex gap-2 items-center">
+                          <i class="fa-solid fa-utensils text-grey-second"></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Sarapan: 06:00 - 10:00
+                          </p>
+                        </div>
+                        <div class="deposit flex gap-2 items-center">
+                          <i class="fa-solid fa-paw text-grey-second"></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Hewan Peliharaan: Tidak diperbolehkan membawa hewan
+                            peliharaan.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info-wrap-2 space-y-5 w-full md:w-1/2">
+                    <div class="info-1 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i class="fa-solid fa-list text-paragraph"></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Fasilitas</span
+                        >
+                      </div>
+                      <div
+                        class="ml-7 text-sm flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0"
+                      >
+                        <div class="left space-y-4">
+                          <div class="ruangan flex items-center gap-2">
+                            <i
+                              class="fa-solid fa-parking text-lg text-grey-second"
+                            ></i>
+                            <span class="ml-1 text-xs md:text-sm"
+                              >Area Parkir</span
+                            >
+                          </div>
+                          <div class="ruangan flex items-center gap-2">
+                            <i
+                              class="fa-solid fa-dumbbell text-grey-second"
+                            ></i>
+                            <span class="ml-1 text-xs md:text-sm"
+                              >Pusat Kebugaran</span
+                            >
+                          </div>
+                          <div class="ruangan flex items-center gap-2">
+                            <i
+                              class="fa-solid fa-water-ladder text-grey-second"
+                            ></i>
+                            <span class="ml-1 text-xs md:text-sm"
+                              >Kolam Renang</span
+                            >
+                          </div>
+                          <div class="ruangan flex items-center gap-2">
+                            <i class="fa-solid fa-wifi text-grey-second"></i>
+                            <span class="ml-1 text-xs md:text-sm">Wi-Fi</span>
+                          </div>
+                        </div>
+                        <div class="right space-y-4">
+                          <div class="ruangan flex items-center gap-2">
+                            <i class="fa-solid fa-spa text-grey-second"></i>
+                            <span class="ml-1 text-xs md:text-sm">Spa</span>
+                          </div>
+                          <div class="ruangan flex items-center gap-2">
+                            <i
+                              class="fa-solid fa-utensils text-grey-second"
+                            ></i>
+                            <span class="ml-1 text-xs md:text-sm"
+                              >Restauran</span
+                            >
+                          </div>
+                          <div class="ruangan flex items-center gap-2">
+                            <i
+                              class="fa-solid fa-door-open text-grey-second"
+                            ></i>
+                            <span class="ml-1 text-xs md:text-sm"
+                              >Ruang Pertemuan</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="info-2 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i class="fa-solid fa-receipt text-paragraph"></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Harga</span
+                        >
+                      </div>
+                      <div class="ml-7 text-sm flex flex-col space-y-4">
+                        <div class="ruangan flex items-center gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <span class="ml-1 text-xs md:text-sm"
+                            >Executive Suite Room :</span
+                          >
+                          <p class="text-xs md:text-sm">Rp. 1.879.000 /malam</p>
+                        </div>
+                        <div class="ruangan flex items-center gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <span class="ml-1 text-xs md:text-sm"
+                            >Superior King Room :</span
+                          >
+                          <p class="text-xs md:text-sm">Rp 680.000 /malam</p>
+                        </div>
+                        <div class="ruangan flex items-center gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <span class="ml-1 text-xs md:text-sm"
+                            >Superior Twin Room :</span
+                          >
+                          <p class="text-xs md:text-sm">Rp 680.000 /malam</p>
+                        </div>
+                        <div class="ruangan flex items-center gap-2">
+                          <i class="fa-solid fa-bed text-grey-second"></i>
+                          <span class="ml-1 text-xs md:text-sm"
+                            >Deluxe Room :</span
+                          >
+                          <p class="text-xs md:text-sm">Rp 785.000 /malam</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="info-3 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i
+                          class="fa-solid fa-puzzle-piece text-lg text-paragraph"
+                        ></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Atraksi Terdekat</span
+                        >
+                      </div>
+                      <div class="ml-7 flex flex-col space-y-4">
+                        <div class="ruangan flex items-center gap-2">
+                          <i
+                            class="fa-solid fa-bag-shopping text-grey-second"
+                          ></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Phinisi Point <span class="italic">(0.5 km)</span>
+                          </p>
+                        </div>
+                        <div class="ruangan flex items-center gap-2">
+                          <i
+                            class="fa-solid fa-bag-shopping text-grey-second"
+                          ></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Trans Studio Mall Makassar
+                            <span class="italic">(1 km)</span>
+                          </p>
+                        </div>
+                        <div class="ruangan flex items-center gap-2">
+                          <i
+                            class="fa-solid fa-umbrella-beach text-grey-second"
+                          ></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Pantai Losari <span class="italic">(2.5 km)</span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="info-4 flex flex-col gap-2">
+                      <div class="flex flex-row items-center gap-2">
+                        <i
+                          class="fa-solid fa-address-book text-lg text-paragraph"
+                        ></i>
+                        <span class="font-medium text-sm md:text-base"
+                          >Kontak</span
+                        >
+                      </div>
+                      <div class="ml-7 flex flex-col space-y-4">
+                        <div class="instagram flex flex-row items-center gap-2">
+                          <i
+                            class="fa-brands fa-instagram text-lg text-grey-second"
+                          ></i>
+                          <a
+                            target="_blank"
+                            href="https://www.instagram.com/gammarahotel/"
+                            class="ml-1 text-xs md:text-sm italic text-primary"
+                            >@gammarahotel</a
+                          >
+                        </div>
+                        <div class="website flex flex-row items-center gap-2">
+                          <i class="fa-solid fa-globe text-grey-second"></i>
+                          <p class="ml-1 text-xs md:text-sm">
+                            Website Resmi
+                            <a
+                              target="_blank"
+                              href="https://www.gammarahotel.co.id/"
+                              class="italic text-primary"
+                            >
+                              Gammara Hotel</a
+                            >
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pesan Sekarang -->
+              <div
+                class="card-info w-full border border-gray-300 rounded-lg px-4 py-6"
+              >
+                <div
+                  class="heading flex flex-row items-center mb-4 gap-2 md:gap-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 md:size-8"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z"
+                    />
+                  </svg>
+                  <span class="font-medium text-sm md:text-base"
+                    >Booking Sekarang!</span
+                  >
+                </div>
+                <div class="border border-gray-300 mb-4"></div>
+                <div
+                  class="book-wrap-container flex items-center flex-wrap flex-row space-x-4 justify-center sm:justify-normal"
+                >
+                  <div class="book-1 flex flex-col py-4 px-6">
+                    <a
+                      href="https://www.traveloka.com/id-id/hotel/indonesia/gammara-hotel-makassar-3000010015639"
+                      target="_blank"
+                    >
+                      <img
+                        src="../../../public/img/partner/traveloka-logo.svg"
+                        alt="Traveloka"
+                        title="Pesan sekarang di Traveloka!"
+                        class="lg:w-28 md:w-24 w-20"
+                      />
+                    </a>
+                  </div>
+                  <div class="book-2 flex flex-col py-4 px-6">
+                    <a
+                      href="https://www.tiket.com/hotel/indonesia/gammara-hotel-makassar-108001534490357126"
+                      target="_blank"
+                    >
+                      <img
+                        src="../../../public/img/partner/tiket-logo.svg"
+                        alt="Tiket.com"
+                        title="Pesan sekarang di Tiket.com!"
+                        class="lg:w-28 md:w-24 w-20"
+                      />
+                    </a>
+                  </div>
+                  <div class="book-3 flex flex-col py-4 px-6">
+                    <a
+                      href="https://www.agoda.com/id-id/gammara-hotel-makassar_2/hotel/makassar-id.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1915013&numberOfBedrooms=&familyMode=false&adults=1&children=0&rooms=1&maxRooms=0&checkIn=2024-09-9&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=-1&showReviewSubmissionEntry=false&currencyCode=IDR&isFreeOccSearch=false&tag=3259ac2c-780c-4591-b7fa-a0e084046e43&tspTypes=16&los=1&searchrequestid=9ce1b223-5e94-40f0-a4a8-a85d2bbacfa7&ds=Fvd%2BFolCxMEv%2Ftmp"
+                      target="_blank"
+                    >
+                      <img
+                        src="../../../public/img/partner/agoda-logo.svg"
+                        alt="Agoda"
+                        title="Pesan sekarang di Agoda!"
+                        class="lg:w-20 md:w-16 w-14"
+                      />
+                    </a>
+                  </div>
+                  <div class="book-4 flex flex-col py-4 px-6">
+                    <a
+                      href="https://www.gammarahotel.co.id/accommodations/"
+                      target="_blank"
+                    >
+                      <img
+                        src="../../../public/img/partner/logo-gammara-hotel.png"
+                        alt="Gammara Hotel"
+                        title="Pesan sekarang di Website Gammara Hotel!"
+                        class="w-24"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <!-- Maps Popup -->
+    <div
+      id="mapPopup"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 p-5 flex items-center justify-center hidden"
+    >
+      <div
+        class="bg-white w-full max-w-2xl rounded-lg shadow-lg overflow-hidden flex flex-col"
+      >
+        <div
+          class="flex justify-between items-center p-4 border-b sticky top-0 bg-white"
+        >
+          <h2 class="text-xl font-semibold">Detail Lokasi</h2>
+          <button id="closePopup" class="text-gray-500 hover:text-gray-700">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="popup-content p-4">
+          <p class="mb-4 text-xs md:text-sm">
+            Jl. Metro Tj. Bunga, Kp. Buyang, Kec. Mariso, Kota Makassar,
+            Sulawesi Selatan 90121
+          </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.664694332555!2d119.40186097451776!3d-5.157541352110709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf1d4363e11805%3A0x12c787d64976dbed!2sGammara%20Hotel%20Makassar!5e0!3m2!1sid!2sid!4v1725102835555!5m2!1sid!2sid"
+            width="100%"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rute Popup -->
+    <div
+      id="rutePopup"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 p-5 flex items-center justify-center hidden"
+    >
+      <div
+        class="bg-white w-full max-w-2xl rounded-lg shadow-lg overflow-hidden flex flex-col"
+      >
+        <div
+          class="flex justify-between items-center p-4 border-b sticky top-0 bg-white"
+        >
+          <h2 class="text-sm md:text-xl font-semibold">Detail Lokasi</h2>
+          <button id="closePopupRute" class="text-gray-500 hover:text-gray-700">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="popup-content p-4">
+          <p class="mb-4 text-xs md:text-sm">
+            Jl. Metro Tj. Bunga, Kp. Buyang, Kec. Mariso, Kota Makassar,
+            Sulawesi Selatan 90121
+          </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d7947.385798597604!2d119.40254433937575!3d-5.153033693782909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e0!4m3!3m2!1d-5.1485445!2d119.4119813!4m5!1s0x2dbf1d4363e11805%3A0x12c787d64976dbed!2sGammara%20Hotel%20Makassar%2C%20Jl.%20Metro%20Tj.%20Bunga%2C%20Kp.%20Buyang%2C%20Kec.%20Mariso%2C%20Kota%20Makassar%2C%20Sulawesi%20Selatan%2090121!3m2!1d-5.1575467!2d119.4044359!5e0!3m2!1sid!2sid!4v1725102863729!5m2!1sid!2sid"
+            class="w-full h-[250px] md:h-[300px]"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <footer class="w-full md:pb-20 py-8">
+      <div class="mx-auto px-4 lg:px-24 xl:px-48">
+        <!--Footer Content-->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8"
+        >
+          <!-- Logo -->
+          <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
+            <a
+              href="../../../index.html"
+              class="flex justify-center lg:justify-start text-primary text-3xl font-bold font-gabriela"
+            >
+              Sulselku.
+            </a>
+            <p
+              class="py-8 text-sm text-grey-second lg:max-w-xs text-center lg:text-left"
+            >
+              Temukan inspirasi, informasi wisata, dan pengalaman unik yang kami
+              sajikan. Bersama kita majukan pariwisata Sulsel!
+            </p>
+          </div>
+          <!-- Menu Sulselku -->
+          <div class="lg:mx-auto text-left">
+            <h4 class="text-lg text-gray-900 font-semibold mb-7">
+              Menu Sulselku
+            </h4>
+            <ul class="text-sm transition-all duration-500">
+              <li class="mb-6">
+                <a
+                  href="../../../index.html"
+                  class="text-grey-second hover:text-primary"
+                  >Beranda</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../../wisata-360.html"
+                  class="text-grey-second hover:text-primary"
+                  >Wisata 360°</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../../tentang.html"
+                  class="text-grey-second hover:text-primary"
+                  >Tentang</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../../kontak.html"
+                  class="text-grey-second hover:text-primary"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Kategori Destinasi -->
+          <div class="lg:mx-auto text-left">
+            <h4 class="text-lg text-gray-900 font-semibold mb-7">
+              Kategori Destinasi
+            </h4>
+            <ul class="text-sm transition-all duration-500">
+              <li class="mb-6">
+                <a
+                  href="../alam.html"
+                  class="text-grey-second hover:text-primary"
+                  >Alam</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../kuliner.html"
+                  class="text-grey-second hover:text-primary"
+                  >Kuliner</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../budaya.html"
+                  class="text-grey-second hover:text-primary"
+                  >Budaya</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../akomodasi.html"
+                  class="text-grey-second hover:text-primary"
+                  >Akomodasi</a
+                >
+              </li>
+              <li class="mb-6">
+                <a
+                  href="../belanja.html"
+                  class="text-grey-second hover:text-primary"
+                  >Belanja</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Bottom Footer -->
+        <div class="py-7 border-t border-gray-200">
+          <div
+            class="flex items-center justify-center flex-col lg:justify-between lg:flex-row"
+          >
+            <span class="text-sm text-gray-500"
+              >©<a href="../../../index.html" class="text-primary">
+                Sulselku.</a
+              >
+              2024, All rights reserved.</span
+            >
+            <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0">
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-instagram group-hover:text-primary text-white-new text-lg"
+                ></i>
+              </a>
+              <a
+                href="https://www.x.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-twitter group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-tiktok group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                class="w-9 h-9 rounded-full group bg-primary flex justify-center items-center transition duration-300 ease-in-out hover:bg-white-new border border-primary"
+              >
+                <i
+                  class="fa-brands fa-youtube group-hover:text-primary text-white-new"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Main JS -->
+    <script src="../js/article.js"></script>
+
+    <script>
+      // Buka Popup Peta
+      const lihatPeta = document.getElementById("lihatPeta");
+      const mapPopup = document.getElementById("mapPopup");
+      const closePopup = document.getElementById("closePopup");
+
+      lihatPeta.addEventListener("click", () => {
+        mapPopup.classList.remove("hidden");
+      });
+
+      closePopup.addEventListener("click", () => {
+        mapPopup.classList.add("hidden");
+      });
+
+      mapPopup.addEventListener("click", (e) => {
+        if (e.target === mapPopup) {
+          mapPopup.classList.add("hidden");
+        }
+      });
+
+      // Buka Popup Rute
+      const lihatPetaRute = document.getElementById("lihatRute");
+      const mapPopupRute = document.getElementById("rutePopup");
+      const closePopupRute = document.getElementById("closePopupRute");
+
+      lihatPetaRute.addEventListener("click", () => {
+        mapPopupRute.classList.remove("hidden");
+      });
+
+      closePopupRute.addEventListener("click", () => {
+        mapPopupRute.classList.add("hidden");
+      });
+
+      mapPopupRute.addEventListener("click", (e) => {
+        if (e.target === mapPopupRute) {
+          mapPopupRute.classList.add("hidden");
+        }
+      });
+
+      // Buka Popup Jam
+      const lihatPetaJam = document.getElementById("lihatJam");
+      const jamPopup = document.getElementById("jamPopup");
+      const closePopupJam = document.getElementById("closePopupJam");
+
+      lihatPetaJam.addEventListener("click", () => {
+        jamPopup.classList.remove("hidden");
+      });
+
+      closePopupJam.addEventListener("click", () => {
+        jamPopup.classList.add("hidden");
+      });
+
+      jamPopup.addEventListener("click", (e) => {
+        if (e.target === jamPopup) {
+          jamPopup.classList.add("hidden");
+        }
+      });
+    </script>
+
+    <!-- Scroll Reveal -->
+    <script>
+      ScrollReveal({
+        reset: false,
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+      });
+
+      ScrollReveal().reveal(".content-heading, .tab-switch", {
+        delay: 150,
+        duration: 1500,
+        origin: "top",
+      });
+      ScrollReveal().reveal(".bread-crumbs", {
+        delay: 250,
+        duration: 2500,
+        origin: "top",
+      });
+      ScrollReveal().reveal(".slider-container", {
+        delay: 250,
+        duration: 1500,
+        origin: "bottom",
+      });
+    </script>
+  </body>
+</html>
