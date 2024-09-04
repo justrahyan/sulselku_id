@@ -235,15 +235,15 @@ function openTab(evt, tabName) {
   var heroImage = document.getElementById("jelajahiImage");
   switch (tabName) {
     case "tab1":
-      heroImage.src = "../public/img/Pesona Image - Alam.svg";
+      heroImage.src = "./public/img/Pesona Image - Alam.svg";
       heroImage.title = "Destinasi Alam";
       break;
     case "tab2":
-      heroImage.src = "../public/img/Pesona Image - Penginapan.svg";
+      heroImage.src = "./public/img/Pesona Image - Penginapan.svg";
       heroImage.title = "Pilihan Akomodasi";
       break;
     case "tab3":
-      heroImage.src = "../public/img/Pesona Image - Belanja.svg";
+      heroImage.src = "./public/img/Pesona Image - Belanja.svg";
       heroImage.title = "Pusat Belanja";
       break;
   }
