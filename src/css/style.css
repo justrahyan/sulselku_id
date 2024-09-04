@@ -84,8 +84,15 @@ html {
 }
 /* Testimoni Card Mobile End */
 
+.location-container .location-info {
+  margin-right: 1rem;
+}
+
 /* Mobile Location Start */
 @media (max-width: 767px) {
+  .location-container .location-info {
+    margin-right: 0;
+  }
   .location-container {
     padding-left: 1.7rem; /* Sesuaikan dengan lebar ikon */
   }
