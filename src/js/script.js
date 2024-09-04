@@ -578,7 +578,7 @@ function searchResults(query) {
         "flex",
         "items-center",
         "gap-4",
-        "my-2",
+        "mt-4",
         "text-sm"
       );
 
