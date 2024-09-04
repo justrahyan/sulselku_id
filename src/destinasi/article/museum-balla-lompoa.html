@@ -366,15 +366,17 @@
                 class="info flex flex-col xl:flex-row justify-between items-start my-4 text-xs md:text-sm space-y-4 xl:space-y-0"
               >
                 <div class="info-left space-y-4">
-                  <p class="location flex flex-wrap flex-row items-center">
-                    <span class="flex items-center">
+                  <div
+                    class="location-container flex flex-col md:flex-row items-start md:items-center"
+                  >
+                    <p class="location-info flex items-center flex-1">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
                         stroke="currentColor"
-                        class="size-8 sm:size-7 md:size-5 mr-2"
+                        class="location-icon w-5 h-5 sm:w-6 sm:h-6 md:w-5 md:h-5 mr-2 flex-shrink-0"
                       >
                         <path
                           stroke-linecap="round"
@@ -387,17 +389,18 @@
                           d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                         />
                       </svg>
-                      Jl. K. H. Wahid Hasyim No.39, Sungguminasa, Kec. Somba
-                      Opu, Kabupaten Gowa, Sulawesi Selatan 92111
-                    </span>
+                      <span class="flex-1">
+                        Jl. K. H. Wahid Hasyim No.39, Sungguminasa, Kec. Somba
+                        Opu, Kabupaten Gowa, Sulawesi Selatan 92111
+                      </span>
+                    </p>
                     <button
                       id="lihatPeta"
-                      class="ml-7 mt-2 sm:ml-10 md:ml-8 sm:mt-0 font-semibold text-primary"
+                      class="location-button mt-2 md:mt-0 md:ml-4 font-semibold text-primary"
                     >
                       Lihat Peta
                     </button>
-                  </p>
-
+                  </div>
                   <p class="time flex flex-row items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

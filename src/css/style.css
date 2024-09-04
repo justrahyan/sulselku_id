@@ -83,3 +83,22 @@ html {
   }
 }
 /* Testimoni Card Mobile End */
+
+/* Mobile Location Start */
+@media (max-width: 767px) {
+  .location-container {
+    padding-left: 1.7rem; /* Sesuaikan dengan lebar ikon */
+  }
+  .location-info {
+    position: relative;
+  }
+  .location-info svg {
+    position: absolute;
+    left: -1.7rem; /* Sesuaikan dengan padding-left .location-container */
+    top: 0;
+  }
+  .location-button {
+    margin-left: 0;
+  }
+}
+/* Mobile Location End */
