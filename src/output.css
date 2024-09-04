@@ -863,6 +863,10 @@ video {
   height: 2rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .h-10 {
   height: 2.5rem;
 }
