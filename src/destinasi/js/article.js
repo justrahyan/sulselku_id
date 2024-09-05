@@ -321,7 +321,7 @@ function searchResults(query) {
       url: "./nipah-mall.html",
     },
     {
-      title: "Novotel Hotel",
+      title: "Novotel Hotel Makassar",
       image: "../../../public/img/novotel-hotel-makassar.jpg",
       url: "./novotel-hotel.html",
     },
@@ -361,7 +361,7 @@ function searchResults(query) {
       url: "./phinisi-hostel-bira.html",
     },
     {
-      title: "Phinisi Point",
+      title: "Phinisi Point Mall",
       image: "../../../public/img/phinisi-point.jpg",
       url: "./phinisi-point.html",
     },
