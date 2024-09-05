@@ -176,7 +176,7 @@ function searchResults(query) {
   // Contoh data yang akan dicari (dapat diubah menjadi API atau database)
   const data = [
     {
-      title: "Ayam Goreng Sulawesi",
+      title: "Ayam Goreng Sulawesi (AGS)",
       image: "../../public/img/ayam-goreng-sulawesi.jpg",
       url: "./article/ayam-goreng-sulawesi.html",
     },
@@ -356,7 +356,7 @@ function searchResults(query) {
       url: "./article/pegunungan-latimojong.html",
     },
     {
-      title: "Phinisi Hotel Bira",
+      title: "Phinisi Hostel Bira",
       image: "../../public/img/phinisi-hostel-bira.jpg",
       url: "./article/phinisi-hostel-bira.html",
     },
@@ -426,7 +426,7 @@ function searchResults(query) {
       url: "./article/sop-konro-karebosi.html",
     },
     {
-      title: "Sop Saudara",
+      title: "Warung Pangkep Sop Saudara",
       image: "../../public/img/sop-saudara.jpg",
       url: "./article/sop-saudara.html",
     },
@@ -448,7 +448,7 @@ function searchResults(query) {
     {
       title: "The Rinra Hotel",
       image: "../../public/img/the-rinra.jpg",
-      url: "./article/the-rinra.html",
+      url: "./article/the-rinra-hotel.html",
     },
     {
       title: "Toko Oleh-Oleh Kota Daeng",
