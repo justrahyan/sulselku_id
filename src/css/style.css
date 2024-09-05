@@ -109,3 +109,14 @@ html {
   }
 }
 /* Mobile Location End */
+
+/* Masking Partner & Testimonials */
+.custom-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 128px,
+    black calc(100% - 128px),
+    transparent 100%
+  );
+}
